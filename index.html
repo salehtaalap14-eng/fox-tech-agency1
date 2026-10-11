@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fox Tech | Montage, Design & Interactive Websites</title>
+<title>Fox Tech</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#D4AF37;--gold2:#B8860B;--bg:#0b0b0b;--card:#141414;--line:#262626;--text:#fff;--dim:#9a9a9a}
+:root{--g1:#FFF099;--gold:#D4AF37;--gold2:#B8860B;--bg:#0b0b0b;--card:#141414;--line:#262626;--text:#fff;--dim:#9a9a9a;--sec:#0e0e0e;--head:rgba(11,11,11,.88)}
+body.light{--g1:#C9A227;--gold:#A67C00;--gold2:#7a5a00;--bg:#f7f5ef;--card:#fff;--line:#e3dfd3;--text:#111;--dim:#555;--sec:#efebdf;--head:rgba(247,245,239,.92)}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat','Cairo',sans-serif}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-.gold{background:linear-gradient(135deg,#FFF099 0%,var(--gold) 50%,var(--gold2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-header{display:flex;justify-content:space-between;align-items:center;padding:18px 8%;background:rgba(11,11,11,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:1000}
-.logo{font-size:24px;font-weight:900;letter-spacing:3px}
-.btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;padding:11px 26px;border-radius:8px;font-weight:700;text-decoration:none;transition:.3s}
+body{background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .4s,color .4s}
+.gold{background:linear-gradient(135deg,var(--g1) 0%,var(--gold) 50%,var(--gold2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 8%;background:var(--head);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:1000}
+.logo{font-size:24px;font-weight:900;letter-spacing:3px;white-space:nowrap}
+.navlinks{display:flex;gap:6px}
+.navlinks a{color:var(--dim);text-decoration:none;padding:8px 12px;font-weight:600;border-radius:8px;transition:.3s}
+.navlinks a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
+.tools{display:flex;gap:10px;align-items:center}
+.icon-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:700;font-size:.85rem;transition:.3s;white-space:nowrap}
+.icon-btn:hover{background:rgba(212,175,55,.12)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;padding:11px 26px;border-radius:8px;font-weight:700;text-decoration:none;transition:.3s;white-space:nowrap}
 .btn:hover{box-shadow:0 0 25px rgba(212,175,55,.55);transform:translateY(-2px)}
 .btn-ghost{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:11px 26px;border-radius:8px;font-weight:600;text-decoration:none;transition:.3s}
 .btn-ghost:hover{background:rgba(212,175,55,.1)}
@@ -35,12 +42,12 @@ section{padding:90px 8%}
 .card .ic{font-size:34px;margin-bottom:16px}
 .card h3{color:var(--gold);font-size:1.25rem;margin-bottom:10px}
 .card p{color:var(--dim);font-size:.95rem}
-.portfolio{background:#0e0e0e;border-top:1px solid var(--line)}
+.work{background:var(--sec);border-top:1px solid var(--line)}
 .group{margin-bottom:70px}
-.group h3{font-size:1.35rem;color:var(--gold);margin-bottom:8px;padding-right:14px;border-right:3px solid var(--gold)}
-.group .desc{color:var(--dim);font-size:.92rem;margin-bottom:24px;padding-right:17px}
-.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px;perspective:1000px}
-.vcard{position:relative;aspect-ratio:9/16;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;padding:0;color:#fff;text-align:start;transition:transform .15s ease-out,border-color .3s,box-shadow .3s;transform-style:preserve-3d;background:#111}
+.group h3{font-size:1.35rem;color:var(--gold);margin-bottom:8px;padding-inline-start:14px;border-inline-start:3px solid var(--gold)}
+.group .desc{color:var(--dim);font-size:.92rem;margin-bottom:24px;padding-inline-start:17px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+.vcard{position:relative;aspect-ratio:9/16;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;padding:0;color:#fff;text-align:start;transition:transform .15s ease-out,border-color .3s,box-shadow .3s;background:#111}
 .vcard .cover{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
 .vcard.fallback .cover{background:
   linear-gradient(90deg,#000 0 8%,transparent 8% 92%,#000 92%),
@@ -48,17 +55,19 @@ section{padding:90px 8%}
   radial-gradient(circle at 50% 40%,rgba(212,175,55,.35),transparent 60%),
   linear-gradient(160deg,#2a2410,#141414 60%,#080808)}
 .vcard::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9),transparent 55%);z-index:1}
-.vcard:hover{border-color:var(--gold);box-shadow:0 12px 40px rgba(212,175,55,.3)}
+.vcard:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 12px 40px rgba(212,175,55,.3)}
 .vcard:hover .cover{transform:scale(1.06)}
-.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;display:flex;align-items:center;justify-content:center;font-size:1.2rem;padding-left:4px;box-shadow:0 0 25px rgba(212,175,55,.6);z-index:2;transition:.3s}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;display:flex;align-items:center;justify-content:center;font-size:1.2rem;padding-inline-start:4px;box-shadow:0 0 25px rgba(212,175,55,.6);z-index:2;transition:.3s}
 .vcard:hover .play{transform:translate(-50%,-50%) scale(1.12)}
-.vtitle{position:absolute;bottom:16px;right:16px;left:16px;font-weight:700;font-size:.95rem;z-index:2}
-.tag{position:absolute;top:12px;right:12px;z-index:2;background:rgba(0,0,0,.6);border:1px solid var(--gold);color:var(--gold);font-size:.7rem;padding:3px 8px;border-radius:20px}
-footer{text-align:center;padding:26px;color:var(--dim);font-size:.85rem;border-top:1px solid #1e1e1e}
+.vtitle{position:absolute;bottom:16px;inset-inline:16px;font-weight:700;font-size:.95rem;z-index:2}
+.tag{position:absolute;top:12px;inset-inline-end:12px;z-index:2;background:rgba(0,0,0,.6);border:1px solid var(--gold);color:var(--gold);font-size:.7rem;padding:3px 8px;border-radius:20px}
+.contact-info{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;font-size:1.05rem}
+footer{text-align:center;padding:26px;color:var(--dim);font-size:.85rem;border-top:1px solid var(--line)}
 .reveal{opacity:0;transform:translateY(30px);transition:.8s ease}
 .reveal.show{opacity:1;transform:none}
+@media(max-width:900px){.navlinks{display:none}}
 @media(max-width:640px){
- header{padding:14px 5%}.logo{font-size:19px}
+ header{padding:14px 5%}.logo{font-size:18px}.icon-btn{padding:7px 10px;font-size:.78rem}
  .hero{padding:70px 5%}.hero h1{font-size:2rem}.hero p{font-size:1rem}
  section{padding:60px 5%}.title{font-size:1.7rem}
  .vgrid{grid-template-columns:repeat(2,1fr);gap:12px}.vtitle{font-size:.8rem}
@@ -69,7 +78,16 @@ footer{text-align:center;padding:26px;color:var(--dim);font-size:.85rem;border-t
 
 <header>
   <div class="logo gold" id="brand"></div>
-  <a id="headerCta" class="btn" target="_blank" rel="noopener"></a>
+  <nav class="navlinks">
+    <a href="#services" id="navServices"></a>
+    <a href="#work" id="navWork"></a>
+    <a href="#contact" id="navContact"></a>
+  </nav>
+  <div class="tools">
+    <button class="icon-btn" id="langBtn" type="button"></button>
+    <button class="icon-btn" id="themeBtn" type="button"></button>
+    <a id="headerCta" class="btn" target="_blank" rel="noopener"></a>
+  </div>
 </header>
 
 <section class="hero">
@@ -81,22 +99,22 @@ footer{text-align:center;padding:26px;color:var(--dim);font-size:.85rem;border-t
   </div>
 </section>
 
-<section>
+<section id="services">
   <h2 class="title gold" id="servicesTitle"></h2>
   <p class="subtitle" id="servicesSub"></p>
   <div class="grid" id="servicesGrid"></div>
 </section>
 
-<section class="portfolio">
-  <h2 class="title gold" id="portfolioTitle"></h2>
-  <p class="subtitle" id="portfolioSub"></p>
-  <div id="portfolioContent"></div>
+<section class="work" id="work">
+  <h2 class="title gold" id="workTitle"></h2>
+  <p class="subtitle" id="workSub"></p>
+  <div id="workContent"></div>
 </section>
 
-<section>
+<section id="contact">
   <h2 class="title gold" id="contactTitle"></h2>
   <p class="subtitle" id="contactText"></p>
-  <div id="contactInfo" style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;font-size:1.05rem"></div>
+  <div class="contact-info" id="contactInfo"></div>
 </section>
 
 <footer id="footer"></footer>
@@ -104,179 +122,194 @@ footer{text-align:center;padding:26px;color:var(--dim);font-size:.85rem;border-t
 <script>
 /* ==========================================================
    ✏️ كل التعديلات هنا بس
-   - فيديو جديد: انسخ سطر { title, url } وحطه في القسم وافصل بفاصلة ,
-   - cover: الصورة الثابتة اللي بتظهر على كل الكروت.
-     لو فاضي "" يظهر التصميم الافتراضي (شريط فيلم + ذهبي).
-     لتغييرها: ارفع صورة باسم cover.jpg في فولدر thumbs، واكتب "thumbs/cover.jpg"
+   - كل نص ليه نسختين: ar (عربي) و en (إنجليزي)
+   - فيديو جديد: انسخ سطر { title:{ar,en}, url } وحطه في القسم وافصل بفاصلة ,
+   - cover: صورة ثابتة لكل الكروت. لو فاضي "" يظهر التصميم الافتراضي.
+     لتغييرها: ارفع صورة في فولدر thumbs باسم cover.jpg واكتب "thumbs/cover.jpg"
    ========================================================== */
 const SITE = {
   brand: "FOX TECH",
   whatsapp: "201212896898",
   email: "salehtaalap14@gmail.com",
-  headerButton: "Contact Us",
+  cover: "",
 
   hero: {
-    title: "Scale Your Brand With Fox Tech 🚀",
-    text: "مونتاج سينمائي • تصميم يشد • إدارة صفحات • مواقع تفاعلية ثنائية وثلاثية الأبعاد",
-    whatsappButton: "Start on WhatsApp 💬",
-    emailButton: "Send Email 📧"
+    title: { ar: "كبّر براندك مع Fox Tech 🚀", en: "Scale Your Brand With Fox Tech 🚀" },
+    text: {
+      ar: "مونتاج سينمائي • تصميم يشد • إدارة صفحات • مواقع تفاعلية ثنائية وثلاثية الأبعاد",
+      en: "Cinematic Montage • Eye-catching Design • Page Management • Interactive 2D & 3D Websites"
+    }
   },
 
   services: {
-    title: "Our Services",
-    sub: "كل اللي يحتاجه براندك في مكان واحد",
+    title: { ar: "خدماتنا", en: "Our Services" },
+    sub: { ar: "كل اللي يحتاجه براندك في مكان واحد", en: "Everything your brand needs in one place" },
     items: [
-      { icon: "🎯", name: "Meta Paid Ads", description: "حملات إعلانية على فيسبوك وانستجرام مبنية على عائد قابل للقياس." },
-      { icon: "🎬", name: "Video Production", description: "ريلز، فيديوهات توكينج هيد، تأثيرات حركية ومونتاج سينمائي." },
-      { icon: "🎨", name: "Graphic Design", description: "تصاميم إعلانية وهويات بصرية كاملة وبوستات سوشيال تشد العين." },
-      { icon: "📲", name: "Social Media Management", description: "استراتيجية محتوى، نشر منظم، نمو للصفحات، وتمركز للبراند." },
-      { icon: "🌐", name: "Interactive & 3D Websites", description: "مواقع بحركة وتفاعل، وتجارب ثنائية وثلاثية الأبعاد تفضل في الذاكرة." },
-      { icon: "📊", name: "Financial & Tax Consulting", description: "محاسبة، مراجعة مالية، إقرارات ضريبية، وتأسيس الكيانات التجارية." }
+      { icon: "🎯", name: { ar: "إعلانات ميتا المدفوعة", en: "Meta Paid Ads" },
+        desc: { ar: "حملات على فيسبوك وانستجرام مبنية على عائد قابل للقياس.", en: "Facebook & Instagram campaigns built around measurable return." } },
+      { icon: "🎬", name: { ar: "إنتاج الفيديو", en: "Video Production" },
+        desc: { ar: "ريلز، توكينج هيد، تأثيرات حركية ومونتاج سينمائي.", en: "Reels, talking-head videos, motion overlays and cinematic edits." } },
+      { icon: "🎨", name: { ar: "التصميم الجرافيكي", en: "Graphic Design" },
+        desc: { ar: "تصاميم إعلانية وهويات بصرية كاملة وبوستات تشد العين.", en: "Ad creatives, full branding packages and eye-catching visuals." } },
+      { icon: "📲", name: { ar: "إدارة السوشيال ميديا", en: "Social Media Management" },
+        desc: { ar: "استراتيجية محتوى، نشر منظم، نمو للصفحات وتمركز للبراند.", en: "Content strategy, scheduled publishing, page growth and positioning." } },
+      { icon: "🌐", name: { ar: "مواقع تفاعلية ثلاثية الأبعاد", en: "Interactive & 3D Websites" },
+        desc: { ar: "مواقع بحركة وتفاعل، وتجارب ثنائية وثلاثية الأبعاد.", en: "Motion-driven websites with interactive 2D and 3D experiences." } },
+      { icon: "📊", name: { ar: "الاستشارات المالية والضريبية", en: "Financial & Tax Consulting" },
+        desc: { ar: "محاسبة، مراجعة مالية، إقرارات ضريبية، وتأسيس الكيانات التجارية.", en: "Accounting, financial audit, tax returns and business setup." } }
     ]
   },
 
-  portfolio: {
-    title: "🎞️ شغلنا بيتكلم عننا | Our Work",
-    sub: "مونتاج سينمائي، تصميم يشد، وإدارة صفحات بتجيب نتايج. شوف بنفسك 👇",
-    cover: "",
+  work: {
+    title: { ar: "🎞️ شغلنا بيتكلم عننا", en: "🎞️ Our Work Speaks For Us" },
+    sub: { ar: "مونتاج سينمائي، تصميم يشد، وإدارة صفحات بتجيب نتايج. شوف بنفسك 👇", en: "Cinematic montage, eye-catching design and page management that delivers. See for yourself 👇" },
     sections: [
       {
-        name: "⚖️ محتوى قانوني | Legal Content",
-        desc: "شرح مبسط وواضح يوصل للناس بسرعة.",
+        name: { ar: "⚖️ محتوى قانوني", en: "⚖️ Legal Content" },
+        desc: { ar: "شرح مبسط وواضح يوصل للناس بسرعة.", en: "Simple, clear explainers that reach people fast." },
         videos: [
-          { title: "قانوني 01", url: "https://www.facebook.com/share/v/1DmnuUcYC1/" },
-          { title: "قانوني 02", url: "https://www.facebook.com/share/v/1MHhkcDnTe/" },
-          { title: "قانوني 03", url: "https://www.facebook.com/share/v/19RpymmeUS/" },
-          { title: "قانوني 04", url: "https://www.facebook.com/share/r/1E5H79y8wC/" }
+          { title: { ar: "قانوني 01", en: "Legal 01" }, url: "https://www.facebook.com/share/v/1DmnuUcYC1/" },
+          { title: { ar: "قانوني 02", en: "Legal 02" }, url: "https://www.facebook.com/share/v/1MHhkcDnTe/" },
+          { title: { ar: "قانوني 03", en: "Legal 03" }, url: "https://www.facebook.com/share/v/19RpymmeUS/" },
+          { title: { ar: "قانوني 04", en: "Legal 04" }, url: "https://www.facebook.com/share/r/1E5H79y8wC/" }
         ]
       },
       {
-        name: "📚 محتوى تعليمي | Educational",
-        desc: "قصص وتاريخ بإيقاع يخلي المشاهد يكمّل لآخر ثانية.",
+        name: { ar: "📚 محتوى تعليمي - التاريخ وقصص الأنبياء", en: "📚 Educational - History & Prophets' Stories" },
+        desc: { ar: "قصص وتاريخ بإيقاع يخلي المشاهد يكمّل لآخر ثانية.", en: "History and stories paced to keep viewers watching until the end." },
         videos: [
-          { title: "تعليمي 01", url: "https://www.facebook.com/share/v/1DgQp6MzGC/" },
-          { title: "تعليمي 02", url: "https://www.facebook.com/share/r/196wcR7GCq/" },
-          { title: "تعليمي 03", url: "https://www.facebook.com/share/v/1F2hg15UnT/" },
-          { title: "تعليمي 04", url: "https://www.facebook.com/share/v/1F4AEsRV1L/" },
-          { title: "تعليمي 05", url: "https://www.facebook.com/share/v/1964MsX73X/" }
+          { title: { ar: "تعليمي 01", en: "Education 01" }, url: "https://www.facebook.com/share/v/1DgQp6MzGC/" },
+          { title: { ar: "تعليمي 02", en: "Education 02" }, url: "https://www.facebook.com/share/r/196wcR7GCq/" },
+          { title: { ar: "تعليمي 03", en: "Education 03" }, url: "https://www.facebook.com/share/v/1F2hg15UnT/" },
+          { title: { ar: "تعليمي 04", en: "Education 04" }, url: "https://www.facebook.com/share/v/1F4AEsRV1L/" },
+          { title: { ar: "تعليمي 05", en: "Education 05" }, url: "https://www.facebook.com/share/v/1964MsX73X/" },
+          { title: { ar: "نموذج مونتاج", en: "Montage Sample" }, url: "https://www.facebook.com/share/p/1JrkPhnAme/" }
         ]
       },
       {
-        name: "🏋️ أجهزة رياضية | Fitness Equipment",
-        desc: "لقطات قريبة وتقطيع احترافي يبرز المنتج.",
+        name: { ar: "🏋️ أجهزة رياضية", en: "🏋️ Fitness Equipment" },
+        desc: { ar: "لقطات قريبة وتقطيع احترافي يبرز المنتج.", en: "Close shots and sharp cuts that highlight the product." },
         videos: [
-          { title: "رياضي 01", url: "https://www.facebook.com/share/r/1DUJsnNNWv/" },
-          { title: "رياضي 02", url: "https://www.facebook.com/share/r/1Dr9WWd18n/" },
-          { title: "رياضي 03", url: "https://www.facebook.com/share/v/19QuMx5Bjw/" },
-          { title: "رياضي 04", url: "https://www.facebook.com/share/r/1FNLUikCfi/" }
-        ]
-      },
-      {
-        name: "✂️ نماذج مونتاج | Montage Showcase",
-        desc: "شغل حقيقي من الاستوديو بجودة عالية.",
-        videos: [
-          { title: "Fox Tech Montage", url: "https://www.facebook.com/share/p/1JrkPhnAme/" }
+          { title: { ar: "رياضي 01", en: "Fitness 01" }, url: "https://www.facebook.com/share/r/1DUJsnNNWv/" },
+          { title: { ar: "رياضي 02", en: "Fitness 02" }, url: "https://www.facebook.com/share/r/1Dr9WWd18n/" },
+          { title: { ar: "رياضي 03", en: "Fitness 03" }, url: "https://www.facebook.com/share/v/19QuMx5Bjw/" },
+          { title: { ar: "رياضي 04", en: "Fitness 04" }, url: "https://www.facebook.com/share/r/1FNLUikCfi/" }
         ]
       }
     ]
   },
 
   contact: {
-    title: "Let's Build Something Great",
-    text: "قولنا على براندك ونجهزلك الخطة المناسبة.",
+    title: { ar: "خلينا نكبّر براندك", en: "Let's Build Something Great" },
+    text: { ar: "قولنا على براندك ونجهزلك الخطة المناسبة.", en: "Tell us about your brand and we'll shape the right plan for it." },
     phones: ["+20 1212896898", "+20 1210371836"],
-    location: "Cairo, Egypt"
+    location: { ar: "القاهرة، مصر", en: "Cairo, Egypt" }
   },
 
-  footer: "© 2026 Fox Tech. All rights reserved."
+  footer: { ar: "© 2026 Fox Tech. جميع الحقوق محفوظة.", en: "© 2026 Fox Tech. All rights reserved." }
 };
 
 /* ========== الكود (متعدلهوش) ========== */
-(function () {
-  const $ = id => document.getElementById(id);
-  const wa = `https://wa.me/${SITE.whatsapp}`;
+const UI = {
+  ar: { services: "الخدمات", work: "الأعمال", contact: "تواصل", lang: "English", toLight: "☀️ فاتح", toDark: "🌙 داكن", cta: "تواصل معنا", heroBtn: "ابدأ على واتساب 💬", heroEmail: "راسلنا 📧", watch: "شوف الفيديو", labels: { legal: "قانوني", edu: "تعليمي" } },
+  en: { services: "Services", work: "Work", contact: "Contact", lang: "عربي", toLight: "☀️ Light", toDark: "🌙 Dark", cta: "Contact Us", heroBtn: "Start on WhatsApp 💬", heroEmail: "Send Email 📧", watch: "Watch", labels: { legal: "Legal", edu: "Educational" } }
+};
 
-  document.title = `${SITE.brand} | Montage, Design & Interactive Websites`;
+let lang = "ar";
+let theme = "dark";
+const $ = id => document.getElementById(id);
+const wa = `https://wa.me/${SITE.whatsapp}`;
+
+function render() {
+  const L = lang, U = UI[L];
+  const t = v => (typeof v === "string" ? v : v[L]);
+
+  document.documentElement.lang = L;
+  document.documentElement.dir = L === "ar" ? "rtl" : "ltr";
+  document.body.classList.toggle("light", theme === "light");
+  document.title = `${SITE.brand} | ${L === "ar" ? "مونتاج وتصميم ومواقع تفاعلية" : "Montage, Design & Interactive Websites"}`;
+
   $("brand").textContent = SITE.brand;
-  $("headerCta").textContent = SITE.headerButton;
+  $("navServices").textContent = U.services;
+  $("navWork").textContent = U.work;
+  $("navContact").textContent = U.contact;
+  $("langBtn").textContent = U.lang;
+  $("themeBtn").textContent = theme === "dark" ? U.toLight : U.toDark;
+  $("headerCta").textContent = U.cta;
   $("headerCta").href = wa;
 
-  $("heroTitle").textContent = SITE.hero.title;
-  $("heroText").textContent = SITE.hero.text;
-  $("heroWhatsapp").textContent = SITE.hero.whatsappButton;
+  $("heroTitle").textContent = t(SITE.hero.title);
+  $("heroText").textContent = t(SITE.hero.text);
+  $("heroWhatsapp").textContent = U.heroBtn;
   $("heroWhatsapp").href = wa;
-  $("heroEmail").textContent = SITE.hero.emailButton;
+  $("heroEmail").textContent = U.heroEmail;
   $("heroEmail").href = `mailto:${SITE.email}`;
 
-  $("servicesTitle").textContent = SITE.services.title;
-  $("servicesSub").textContent = SITE.services.sub;
-  SITE.services.items.forEach(s => {
-    const c = document.createElement("div");
-    c.className = "card reveal";
-    c.innerHTML = `<div class="ic"></div><h3></h3><p></p>`;
-    c.querySelector(".ic").textContent = s.icon;
-    c.querySelector("h3").textContent = s.name;
-    c.querySelector("p").textContent = s.description;
-    $("servicesGrid").appendChild(c);
-  });
+  $("servicesTitle").textContent = t(SITE.services.title);
+  $("servicesSub").textContent = t(SITE.services.sub);
+  $("servicesGrid").innerHTML = SITE.services.items.map(s => `
+    <div class="card reveal">
+      <div class="ic">${s.icon}</div>
+      <h3>${t(s.name)}</h3>
+      <p>${t(s.desc)}</p>
+    </div>`).join("");
 
-  const P = SITE.portfolio;
-  $("portfolioTitle").textContent = P.title;
-  $("portfolioSub").textContent = P.sub;
-  const content = $("portfolioContent");
+  $("workTitle").textContent = t(SITE.work.title);
+  $("workSub").textContent = t(SITE.work.sub);
+  $("workContent").innerHTML = SITE.work.sections.map(sec => `
+    <div class="group reveal">
+      <h3>${t(sec.name)}</h3>
+      <p class="desc">${t(sec.desc)}</p>
+      <div class="vgrid">
+        ${sec.videos.map(v => `
+          <button type="button" class="vcard${SITE.cover ? "" : " fallback"}" data-url="${v.url}">
+            <span class="cover" ${SITE.cover ? `style="background-image:url('${SITE.cover}')"` : ""}></span>
+            <span class="tag">MONTAGE</span>
+            <span class="play">▶</span>
+            <span class="vtitle">${t(v.title)}</span>
+          </button>`).join("")}
+      </div>
+    </div>`).join("");
 
-  P.sections.forEach(sec => {
-    const g = document.createElement("div");
-    g.className = "group reveal";
-    const h3 = document.createElement("h3");
-    h3.textContent = sec.name;
-    const d = document.createElement("p");
-    d.className = "desc";
-    d.textContent = sec.desc;
-    const vg = document.createElement("div");
-    vg.className = "vgrid";
-
-    sec.videos.forEach(v => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "vcard" + (P.cover ? "" : " fallback");
-      b.innerHTML = `<span class="cover"></span><span class="tag">MONTAGE</span><span class="play">▶</span><span class="vtitle"></span>`;
-      if (P.cover) b.querySelector(".cover").style.backgroundImage = `url("${P.cover}")`;
-      b.querySelector(".vtitle").textContent = v.title;
-      b.addEventListener("click", () => window.open(v.url, "_blank", "noopener"));
-
-      // تأثير ميل 3D خفيف مع حركة الماوس
-      b.addEventListener("mousemove", e => {
-        const r = b.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        b.style.transform = `rotateY(${x * 12}deg) rotateX(${-y * 12}deg) translateY(-4px)`;
-      });
-      b.addEventListener("mouseleave", () => { b.style.transform = ""; });
-
-      vg.appendChild(b);
-    });
-
-    g.append(h3, d, vg);
-    content.appendChild(g);
-  });
-
-  $("contactTitle").textContent = SITE.contact.title;
-  $("contactText").textContent = SITE.contact.text;
-  const info = $("contactInfo");
-  [
+  $("contactTitle").textContent = t(SITE.contact.title);
+  $("contactText").textContent = t(SITE.contact.text);
+  $("contactInfo").innerHTML = [
     `📞 <strong>WhatsApp:</strong> ${SITE.contact.phones.join(" | ")}`,
     `📧 <strong>Email:</strong> ${SITE.email}`,
-    `📍 <strong>Location:</strong> ${SITE.contact.location}`
-  ].forEach(html => { const x = document.createElement("div"); x.innerHTML = html; info.appendChild(x); });
+    `📍 <strong>${L === "ar" ? "الموقع" : "Location"}:</strong> ${t(SITE.contact.location)}`
+  ].map(h => `<div>${h}</div>`).join("");
 
-  $("footer").textContent = SITE.footer;
+  $("footer").textContent = t(SITE.footer);
 
+  observeReveals();
+}
+
+function observeReveals() {
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("show"); io.unobserve(e.target); } });
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("show"); io.unobserve(e.target); }
+    });
   }, { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
-})();
+}
+
+// فتح الفيديو بالضغط على أي كارت
+$("workContent").addEventListener("click", e => {
+  const card = e.target.closest(".vcard");
+  if (card) window.open(card.dataset.url, "_blank", "noopener");
+});
+
+$("langBtn").addEventListener("click", () => {
+  lang = lang === "ar" ? "en" : "ar";
+  render();
+});
+
+$("themeBtn").addEventListener("click", () => {
+  theme = theme === "dark" ? "light" : "dark";
+  render();
+});
+
+render();
 </script>
 </body>
 </html>
