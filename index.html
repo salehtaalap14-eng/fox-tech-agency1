@@ -3,89 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fox Tech | Your Digital Growth Partner</title>
+<title>Fox Tech | Montage, Design & Interactive Websites</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--gold-primary:#D4AF37;--gold-accent:#B8860B;--bg-dark:#111;--card-bg:#1A1A1A;--card-border:#2B2B2B;--text-light:#fff;--text-dim:#A0A0A0}
+:root{--gold:#D4AF37;--gold2:#B8860B;--bg:#0b0b0b;--card:#141414;--line:#262626;--text:#fff;--dim:#9a9a9a}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat','Cairo',sans-serif}
-body{background:var(--bg-dark);color:var(--text-light);line-height:1.6;overflow-x:hidden}
-.gold-text{background:linear-gradient(135deg,#FFF099 0%,var(--gold-primary) 50%,var(--gold-accent) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:rgba(17,17,17,.95);border-bottom:1px solid var(--card-border);position:sticky;top:0;z-index:1000}
-.logo{font-size:26px;font-weight:900;letter-spacing:2px}
-.nav-btn{display:inline-block;background:linear-gradient(135deg,var(--gold-primary),var(--gold-accent));color:#000;padding:10px 24px;border-radius:6px;font-weight:700;text-decoration:none;transition:.3s}
-.nav-btn:hover{box-shadow:0 0 20px rgba(212,175,55,.6);transform:translateY(-2px)}
-.hero{text-align:center;padding:100px 8% 80px;background:radial-gradient(circle at center,rgba(212,175,55,.1) 0%,transparent 70%)}
-.hero h1{font-size:3rem;font-weight:800;margin-bottom:20px;text-transform:uppercase}
-.hero p{font-size:1.2rem;color:var(--text-dim);max-width:750px;margin:0 auto 35px}
-.cta-group{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
-.btn-secondary{display:inline-block;border:1px solid var(--gold-primary);color:var(--gold-primary);padding:12px 28px;border-radius:6px;text-decoration:none;font-weight:600;transition:.3s}
-.btn-secondary:hover{background:rgba(212,175,55,.1)}
-section{padding:80px 8%}
-.section-title{text-align:center;font-size:2.2rem;margin-bottom:50px;font-weight:800}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.card{background:var(--card-bg);border:1px solid var(--card-border);padding:30px;border-radius:12px;transition:.3s}
-.card:hover{border-color:var(--gold-primary);box-shadow:0 5px 25px rgba(212,175,55,.15);transform:translateY(-5px)}
-.card-icon{font-size:35px;margin-bottom:15px}
-.card h3{font-size:1.3rem;margin-bottom:10px;color:var(--gold-primary)}
-.card p{color:var(--text-dim);font-size:.95rem}
-.portfolio{background:#0d0d0d;border-top:1px solid var(--card-border)}
-.portfolio-group{margin-bottom:60px}
-.portfolio-group h3{font-size:1.4rem;color:var(--gold-primary);margin-bottom:25px;padding-right:12px;border-right:3px solid var(--gold-primary)}
-.video-grid,.pages-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
-.video-card{position:relative;aspect-ratio:9/16;border:1px solid var(--card-border);border-radius:12px;background:radial-gradient(circle at 50% 35%,rgba(212,175,55,.25),transparent 60%),linear-gradient(160deg,#2a2410 0%,#141414 60%,#0a0a0a 100%);cursor:pointer;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px;transition:.3s;color:var(--text-light)}
-.video-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),transparent 50%);pointer-events:none}
-.video-card:hover{border-color:var(--gold-primary);box-shadow:0 5px 25px rgba(212,175,55,.25);transform:translateY(-5px)}
-.play-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold-primary),var(--gold-accent));color:#000;display:flex;align-items:center;justify-content:center;font-size:1.4rem;padding-left:4px;box-shadow:0 0 20px rgba(212,175,55,.5);position:relative;z-index:1}
-.video-title{position:absolute;bottom:16px;right:16px;left:16px;font-weight:700;font-size:1rem;text-align:right;z-index:1}
-.page-card{display:block;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:30px;text-decoration:none;color:var(--text-light);transition:.3s}
-.page-card:hover{border-color:var(--gold-primary);transform:translateY(-5px)}
-.page-card h4{color:var(--gold-primary);font-size:1.2rem;margin-bottom:8px}
-.page-card p{color:var(--text-dim);font-size:.95rem;margin-bottom:15px}
-.page-link{color:var(--gold-primary);font-weight:600}
-.contact{background:var(--card-bg);border-top:1px solid var(--card-border);text-align:center}
-.contact-sub{color:var(--text-dim);margin-top:10px}
-.contact-info{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:25px;font-size:1.1rem}
-footer{text-align:center;padding:20px;color:var(--text-dim);font-size:.85rem;border-top:1px solid #222}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.gold{background:linear-gradient(135deg,#FFF099 0%,var(--gold) 50%,var(--gold2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 8%;background:rgba(11,11,11,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:1000}
+.logo{font-size:24px;font-weight:900;letter-spacing:3px}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;padding:11px 26px;border-radius:8px;font-weight:700;text-decoration:none;transition:.3s}
+.btn:hover{box-shadow:0 0 25px rgba(212,175,55,.55);transform:translateY(-2px)}
+.btn-ghost{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:11px 26px;border-radius:8px;font-weight:600;text-decoration:none;transition:.3s}
+.btn-ghost:hover{background:rgba(212,175,55,.1)}
+.hero{position:relative;text-align:center;padding:110px 8% 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 30% 40%,rgba(212,175,55,.18),transparent 45%),radial-gradient(circle at 70% 60%,rgba(184,134,11,.14),transparent 45%);animation:drift 12s ease-in-out infinite alternate;z-index:0}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-3%,2%) scale(1.08)}}
+.hero>*{position:relative;z-index:1}
+.hero h1{font-size:3.2rem;font-weight:800;margin-bottom:20px;text-transform:uppercase;line-height:1.2}
+.hero p{font-size:1.15rem;color:var(--dim);max-width:720px;margin:0 auto 36px}
+.cta{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+section{padding:90px 8%}
+.title{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:12px}
+.subtitle{text-align:center;color:var(--dim);margin-bottom:55px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px;transition:.35s}
+.card:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 10px 35px rgba(212,175,55,.15)}
+.card .ic{font-size:34px;margin-bottom:16px}
+.card h3{color:var(--gold);font-size:1.25rem;margin-bottom:10px}
+.card p{color:var(--dim);font-size:.95rem}
+.portfolio{background:#0e0e0e;border-top:1px solid var(--line)}
+.group{margin-bottom:70px}
+.group h3{font-size:1.35rem;color:var(--gold);margin-bottom:8px;padding-right:14px;border-right:3px solid var(--gold)}
+.group .desc{color:var(--dim);font-size:.92rem;margin-bottom:24px;padding-right:17px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px;perspective:1000px}
+.vcard{position:relative;aspect-ratio:9/16;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;padding:0;color:#fff;text-align:start;transition:transform .15s ease-out,border-color .3s,box-shadow .3s;transform-style:preserve-3d;background:#111}
+.vcard .cover{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
+.vcard.fallback .cover{background:
+  linear-gradient(90deg,#000 0 8%,transparent 8% 92%,#000 92%),
+  repeating-linear-gradient(90deg,transparent 0 14px,rgba(212,175,55,.15) 14px 16px),
+  radial-gradient(circle at 50% 40%,rgba(212,175,55,.35),transparent 60%),
+  linear-gradient(160deg,#2a2410,#141414 60%,#080808)}
+.vcard::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9),transparent 55%);z-index:1}
+.vcard:hover{border-color:var(--gold);box-shadow:0 12px 40px rgba(212,175,55,.3)}
+.vcard:hover .cover{transform:scale(1.06)}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;display:flex;align-items:center;justify-content:center;font-size:1.2rem;padding-left:4px;box-shadow:0 0 25px rgba(212,175,55,.6);z-index:2;transition:.3s}
+.vcard:hover .play{transform:translate(-50%,-50%) scale(1.12)}
+.vtitle{position:absolute;bottom:16px;right:16px;left:16px;font-weight:700;font-size:.95rem;z-index:2}
+.tag{position:absolute;top:12px;right:12px;z-index:2;background:rgba(0,0,0,.6);border:1px solid var(--gold);color:var(--gold);font-size:.7rem;padding:3px 8px;border-radius:20px}
+footer{text-align:center;padding:26px;color:var(--dim);font-size:.85rem;border-top:1px solid #1e1e1e}
+.reveal{opacity:0;transform:translateY(30px);transition:.8s ease}
+.reveal.show{opacity:1;transform:none}
 @media(max-width:640px){
- header{padding:16px 5%}.logo{font-size:20px}
- .hero{padding:60px 5%}.hero h1{font-size:2rem}.hero p{font-size:1rem}
- section{padding:50px 5%}.section-title{font-size:1.7rem}
- .video-grid{grid-template-columns:repeat(2,1fr);gap:12px}.video-title{font-size:.85rem}
+ header{padding:14px 5%}.logo{font-size:19px}
+ .hero{padding:70px 5%}.hero h1{font-size:2rem}.hero p{font-size:1rem}
+ section{padding:60px 5%}.title{font-size:1.7rem}
+ .vgrid{grid-template-columns:repeat(2,1fr);gap:12px}.vtitle{font-size:.8rem}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo gold-text" id="brand"></div>
-  <a id="headerCta" class="nav-btn" target="_blank" rel="noopener"></a>
+  <div class="logo gold" id="brand"></div>
+  <a id="headerCta" class="btn" target="_blank" rel="noopener"></a>
 </header>
 
 <section class="hero">
-  <h1 class="gold-text" id="heroTitle"></h1>
+  <h1 class="gold" id="heroTitle"></h1>
   <p id="heroText"></p>
-  <div class="cta-group">
-    <a id="heroWhatsapp" class="nav-btn" target="_blank" rel="noopener"></a>
-    <a id="heroEmail" class="btn-secondary"></a>
+  <div class="cta">
+    <a id="heroWhatsapp" class="btn" target="_blank" rel="noopener"></a>
+    <a id="heroEmail" class="btn-ghost"></a>
   </div>
 </section>
 
 <section>
-  <h2 class="section-title gold-text" id="servicesTitle"></h2>
+  <h2 class="title gold" id="servicesTitle"></h2>
+  <p class="subtitle" id="servicesSub"></p>
   <div class="grid" id="servicesGrid"></div>
 </section>
 
 <section class="portfolio">
-  <h2 class="section-title gold-text" id="portfolioTitle"></h2>
+  <h2 class="title gold" id="portfolioTitle"></h2>
+  <p class="subtitle" id="portfolioSub"></p>
   <div id="portfolioContent"></div>
 </section>
 
-<section class="contact">
-  <h2 class="gold-text" id="contactTitle"></h2>
-  <p class="contact-sub" id="contactText"></p>
-  <div class="contact-info" id="contactInfo"></div>
+<section>
+  <h2 class="title gold" id="contactTitle"></h2>
+  <p class="subtitle" id="contactText"></p>
+  <div id="contactInfo" style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;font-size:1.05rem"></div>
 </section>
 
 <footer id="footer"></footer>
@@ -93,7 +104,10 @@ footer{text-align:center;padding:20px;color:var(--text-dim);font-size:.85rem;bor
 <script>
 /* ==========================================================
    ✏️ كل التعديلات هنا بس
-   - لإضافة فيديو: انسخ سطر { title, url } وحطه في القسم، وافصل بفاصلة ,
+   - فيديو جديد: انسخ سطر { title, url } وحطه في القسم وافصل بفاصلة ,
+   - cover: الصورة الثابتة اللي بتظهر على كل الكروت.
+     لو فاضي "" يظهر التصميم الافتراضي (شريط فيلم + ذهبي).
+     لتغييرها: ارفع صورة باسم cover.jpg في فولدر thumbs، واكتب "thumbs/cover.jpg"
    ========================================================== */
 const SITE = {
   brand: "FOX TECH",
@@ -102,71 +116,79 @@ const SITE = {
   headerButton: "Contact Us",
 
   hero: {
-    title: "Scale Your Business With Fox Tech 🚀",
-    text: "Your All-in-One Digital Growth Partner. Specializing in High-ROI Meta Ads, Cinematic Video Editing, Graphic Design, SMM & Financial Consulting.",
-    whatsappButton: "Get Started on WhatsApp 💬",
+    title: "Scale Your Brand With Fox Tech 🚀",
+    text: "مونتاج سينمائي • تصميم يشد • إدارة صفحات • مواقع تفاعلية ثنائية وثلاثية الأبعاد",
+    whatsappButton: "Start on WhatsApp 💬",
     emailButton: "Send Email 📧"
   },
 
   services: {
-    title: "Our Core Services",
+    title: "Our Services",
+    sub: "كل اللي يحتاجه براندك في مكان واحد",
     items: [
-      { icon: "🎯", name: "Meta Paid Ads", description: "Targeted Facebook & Instagram ad campaigns optimized for maximum return on investment (ROI)." },
-      { icon: "🎬", name: "Video Production", description: "High-converting Reels, Talking-Head videos, dynamic overlays, and cinematic promotional edits." },
-      { icon: "🎨", name: "Graphic Design", description: "Eye-catching ad creatives, full branding packages, and modern social media visuals." },
-      { icon: "📲", name: "Social Media Management", description: "Data-driven content strategy, scheduled posting, page growth, and brand positioning." },
-      { icon: "📊", name: "Financial & Tax Consulting", description: "Legal accounting, financial audit, tax returns, and business entity setup under expert management." }
+      { icon: "🎯", name: "Meta Paid Ads", description: "حملات إعلانية على فيسبوك وانستجرام مبنية على عائد قابل للقياس." },
+      { icon: "🎬", name: "Video Production", description: "ريلز، فيديوهات توكينج هيد، تأثيرات حركية ومونتاج سينمائي." },
+      { icon: "🎨", name: "Graphic Design", description: "تصاميم إعلانية وهويات بصرية كاملة وبوستات سوشيال تشد العين." },
+      { icon: "📲", name: "Social Media Management", description: "استراتيجية محتوى، نشر منظم، نمو للصفحات، وتمركز للبراند." },
+      { icon: "🌐", name: "Interactive & 3D Websites", description: "مواقع بحركة وتفاعل، وتجارب ثنائية وثلاثية الأبعاد تفضل في الذاكرة." },
+      { icon: "📊", name: "Financial & Tax Consulting", description: "محاسبة، مراجعة مالية، إقرارات ضريبية، وتأسيس الكيانات التجارية." }
     ]
   },
 
   portfolio: {
-    title: "Our Work | أعمالنا",
+    title: "🎞️ شغلنا بيتكلم عننا | Our Work",
+    sub: "مونتاج سينمائي، تصميم يشد، وإدارة صفحات بتجيب نتايج. شوف بنفسك 👇",
+    cover: "",
     sections: [
       {
-        name: "🎬 فيديوهات تولكينج هيد - قانونية",
+        name: "⚖️ محتوى قانوني | Legal Content",
+        desc: "شرح مبسط وواضح يوصل للناس بسرعة.",
         videos: [
-          { title: "تولكينج هيد 1", url: "https://www.facebook.com/share/v/1DmnuUcYC1/" },
-          { title: "تولكينج هيد 2", url: "https://www.facebook.com/share/v/1MHhkcDnTe/" },
-          { title: "تولكينج هيد 3", url: "https://www.facebook.com/share/v/19RpymmeUS/" },
-          { title: "تولكينج هيد 4", url: "https://www.facebook.com/share/r/1E5H79y8wC/" }
+          { title: "قانوني 01", url: "https://www.facebook.com/share/v/1DmnuUcYC1/" },
+          { title: "قانوني 02", url: "https://www.facebook.com/share/v/1MHhkcDnTe/" },
+          { title: "قانوني 03", url: "https://www.facebook.com/share/v/19RpymmeUS/" },
+          { title: "قانوني 04", url: "https://www.facebook.com/share/r/1E5H79y8wC/" }
         ]
       },
       {
-        name: "📚 فيديوهات دراسية - التاريخ وقصص الأنبياء",
+        name: "📚 محتوى تعليمي | Educational",
+        desc: "قصص وتاريخ بإيقاع يخلي المشاهد يكمّل لآخر ثانية.",
         videos: [
-          { title: "دراسي 1", url: "https://www.facebook.com/share/v/1DgQp6MzGC/" },
-          { title: "دراسي 2", url: "https://www.facebook.com/share/r/196wcR7GCq/" },
-          { title: "دراسي 3", url: "https://www.facebook.com/share/v/1F2hg15UnT/" },
-          { title: "دراسي 4", url: "https://www.facebook.com/share/v/1F4AEsRV1L/" },
-          { title: "دراسي 5", url: "https://www.facebook.com/share/v/1964MsX73X/" }
+          { title: "تعليمي 01", url: "https://www.facebook.com/share/v/1DgQp6MzGC/" },
+          { title: "تعليمي 02", url: "https://www.facebook.com/share/r/196wcR7GCq/" },
+          { title: "تعليمي 03", url: "https://www.facebook.com/share/v/1F2hg15UnT/" },
+          { title: "تعليمي 04", url: "https://www.facebook.com/share/v/1F4AEsRV1L/" },
+          { title: "تعليمي 05", url: "https://www.facebook.com/share/v/1964MsX73X/" }
         ]
       },
       {
-        name: "🏋️ فيديوهات الأجهزة الرياضية",
+        name: "🏋️ أجهزة رياضية | Fitness Equipment",
+        desc: "لقطات قريبة وتقطيع احترافي يبرز المنتج.",
         videos: [
-          { title: "أجهزة رياضية 1", url: "https://www.facebook.com/share/r/1DUJsnNNWv/" },
-          { title: "أجهزة رياضية 2", url: "https://www.facebook.com/share/r/1Dr9WWd18n/" },
-          { title: "أجهزة رياضية 3", url: "https://www.facebook.com/share/v/19QuMx5Bjw/" },
-          { title: "أجهزة رياضية 4", url: "https://www.facebook.com/share/r/1FNLUikCfi/" }
+          { title: "رياضي 01", url: "https://www.facebook.com/share/r/1DUJsnNNWv/" },
+          { title: "رياضي 02", url: "https://www.facebook.com/share/r/1Dr9WWd18n/" },
+          { title: "رياضي 03", url: "https://www.facebook.com/share/v/19QuMx5Bjw/" },
+          { title: "رياضي 04", url: "https://www.facebook.com/share/r/1FNLUikCfi/" }
+        ]
+      },
+      {
+        name: "✂️ نماذج مونتاج | Montage Showcase",
+        desc: "شغل حقيقي من الاستوديو بجودة عالية.",
+        videos: [
+          { title: "Fox Tech Montage", url: "https://www.facebook.com/share/p/1JrkPhnAme/" }
         ]
       }
-    ],
-    pages: {
-      title: "🌐 صفحات شغلنا",
-      items: [
-        { name: "Fox Tech", description: "مونتاج وجرافيك وإدارة صفحات بشكل احترافي كامل.", url: "https://www.facebook.com/share/p/1JrkPhnAme/" }
-      ]
-    }
+    ]
   },
 
   contact: {
-    title: "Ready to Grow Your Brand?",
-    text: "Get in touch with us today for a tailored consultation.",
+    title: "Let's Build Something Great",
+    text: "قولنا على براندك ونجهزلك الخطة المناسبة.",
     phones: ["+20 1212896898", "+20 1210371836"],
     location: "Cairo, Egypt"
   },
 
-  footer: "© 2026 Fox Tech. All rights reserved. | Brand Identity: Black & Gold Premium Edition."
+  footer: "© 2026 Fox Tech. All rights reserved."
 };
 
 /* ========== الكود (متعدلهوش) ========== */
@@ -174,7 +196,7 @@ const SITE = {
   const $ = id => document.getElementById(id);
   const wa = `https://wa.me/${SITE.whatsapp}`;
 
-  document.title = `${SITE.brand} | Your Digital Growth Partner`;
+  document.title = `${SITE.brand} | Montage, Design & Interactive Websites`;
   $("brand").textContent = SITE.brand;
   $("headerCta").textContent = SITE.headerButton;
   $("headerCta").href = wa;
@@ -187,11 +209,12 @@ const SITE = {
   $("heroEmail").href = `mailto:${SITE.email}`;
 
   $("servicesTitle").textContent = SITE.services.title;
+  $("servicesSub").textContent = SITE.services.sub;
   SITE.services.items.forEach(s => {
     const c = document.createElement("div");
-    c.className = "card";
-    c.innerHTML = `<div class="card-icon"></div><h3></h3><p></p>`;
-    c.querySelector(".card-icon").textContent = s.icon;
+    c.className = "card reveal";
+    c.innerHTML = `<div class="ic"></div><h3></h3><p></p>`;
+    c.querySelector(".ic").textContent = s.icon;
     c.querySelector("h3").textContent = s.name;
     c.querySelector("p").textContent = s.description;
     $("servicesGrid").appendChild(c);
@@ -199,63 +222,60 @@ const SITE = {
 
   const P = SITE.portfolio;
   $("portfolioTitle").textContent = P.title;
+  $("portfolioSub").textContent = P.sub;
   const content = $("portfolioContent");
-
-  // فتح الفيديو في تاب جديد على فيسبوك
-  function openVideo(url) {
-    window.open(url, "_blank", "noopener");
-  }
 
   P.sections.forEach(sec => {
     const g = document.createElement("div");
-    g.className = "portfolio-group";
+    g.className = "group reveal";
     const h3 = document.createElement("h3");
     h3.textContent = sec.name;
+    const d = document.createElement("p");
+    d.className = "desc";
+    d.textContent = sec.desc;
     const vg = document.createElement("div");
-    vg.className = "video-grid";
+    vg.className = "vgrid";
+
     sec.videos.forEach(v => {
       const b = document.createElement("button");
       b.type = "button";
-      b.className = "video-card";
-      b.innerHTML = `<span class="play-icon">▶</span><span class="video-title"></span>`;
-      b.querySelector(".video-title").textContent = v.title;
-      b.addEventListener("click", () => openVideo(v.url));
+      b.className = "vcard" + (P.cover ? "" : " fallback");
+      b.innerHTML = `<span class="cover"></span><span class="tag">MONTAGE</span><span class="play">▶</span><span class="vtitle"></span>`;
+      if (P.cover) b.querySelector(".cover").style.backgroundImage = `url("${P.cover}")`;
+      b.querySelector(".vtitle").textContent = v.title;
+      b.addEventListener("click", () => window.open(v.url, "_blank", "noopener"));
+
+      // تأثير ميل 3D خفيف مع حركة الماوس
+      b.addEventListener("mousemove", e => {
+        const r = b.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        b.style.transform = `rotateY(${x * 12}deg) rotateX(${-y * 12}deg) translateY(-4px)`;
+      });
+      b.addEventListener("mouseleave", () => { b.style.transform = ""; });
+
       vg.appendChild(b);
     });
-    g.append(h3, vg);
+
+    g.append(h3, d, vg);
     content.appendChild(g);
   });
-
-  const pg = document.createElement("div");
-  pg.className = "portfolio-group";
-  const pt = document.createElement("h3");
-  pt.textContent = P.pages.title;
-  const pgrid = document.createElement("div");
-  pgrid.className = "pages-grid";
-  P.pages.items.forEach(item => {
-    const a = document.createElement("a");
-    a.className = "page-card";
-    a.href = item.url;
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.innerHTML = `<h4></h4><p></p><span class="page-link">شوف الصفحة ↗</span>`;
-    a.querySelector("h4").textContent = item.name;
-    a.querySelector("p").textContent = item.description;
-    pgrid.appendChild(a);
-  });
-  pg.append(pt, pgrid);
-  content.appendChild(pg);
 
   $("contactTitle").textContent = SITE.contact.title;
   $("contactText").textContent = SITE.contact.text;
   const info = $("contactInfo");
   [
-    `📞 <strong>Call/WhatsApp:</strong> ${SITE.contact.phones.join(" | ")}`,
+    `📞 <strong>WhatsApp:</strong> ${SITE.contact.phones.join(" | ")}`,
     `📧 <strong>Email:</strong> ${SITE.email}`,
     `📍 <strong>Location:</strong> ${SITE.contact.location}`
-  ].forEach(html => { const d = document.createElement("div"); d.innerHTML = html; info.appendChild(d); });
+  ].forEach(html => { const x = document.createElement("div"); x.innerHTML = html; info.appendChild(x); });
 
-  $("footer").innerHTML = `<p>${SITE.footer}</p>`;
+  $("footer").textContent = SITE.footer;
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("show"); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 })();
 </script>
 </body>
