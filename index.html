@@ -1,44 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fox Tech | Your Digital Growth Partner</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fox Tech | Your Digital Growth Partner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--gold-primary:#D4AF37;--gold-accent:#B8860B;--bg-dark:#111;--card-bg:#1A1A1A;--card-border:#2B2B2B;--text-light:#fff;--text-dim:#A0A0A0}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat','Cairo',sans-serif}
+body{background:var(--bg-dark);color:var(--text-light);line-height:1.6;overflow-x:hidden}
+.gold-text{background:linear-gradient(135deg,#FFF099 0%,var(--gold-primary) 50%,var(--gold-accent) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:rgba(17,17,17,.95);border-bottom:1px solid var(--card-border);position:sticky;top:0;z-index:1000}
+.logo{font-size:26px;font-weight:900;letter-spacing:2px}
+.nav-btn{display:inline-block;background:linear-gradient(135deg,var(--gold-primary),var(--gold-accent));color:#000;padding:10px 24px;border-radius:6px;font-weight:700;text-decoration:none;transition:.3s}
+.nav-btn:hover{box-shadow:0 0 20px rgba(212,175,55,.6);transform:translateY(-2px)}
+.hero{text-align:center;padding:100px 8% 80px;background:radial-gradient(circle at center,rgba(212,175,55,.1) 0%,transparent 70%)}
+.hero h1{font-size:3rem;font-weight:800;margin-bottom:20px;text-transform:uppercase}
+.hero p{font-size:1.2rem;color:var(--text-dim);max-width:750px;margin:0 auto 35px}
+.cta-group{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+.btn-secondary{display:inline-block;border:1px solid var(--gold-primary);color:var(--gold-primary);padding:12px 28px;border-radius:6px;text-decoration:none;font-weight:600;transition:.3s}
+.btn-secondary:hover{background:rgba(212,175,55,.1)}
+section{padding:80px 8%}
+.section-title{text-align:center;font-size:2.2rem;margin-bottom:50px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.card{background:var(--card-bg);border:1px solid var(--card-border);padding:30px;border-radius:12px;transition:.3s}
+.card:hover{border-color:var(--gold-primary);box-shadow:0 5px 25px rgba(212,175,55,.15);transform:translateY(-5px)}
+.card-icon{font-size:35px;margin-bottom:15px}
+.card h3{font-size:1.3rem;margin-bottom:10px;color:var(--gold-primary)}
+.card p{color:var(--text-dim);font-size:.95rem}
+.portfolio{background:#0d0d0d;border-top:1px solid var(--card-border)}
+.portfolio-group{margin-bottom:60px}
+.portfolio-group h3{font-size:1.4rem;color:var(--gold-primary);margin-bottom:25px;padding-right:12px;border-right:3px solid var(--gold-primary)}
+.video-grid,.pages-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.video-card{position:relative;aspect-ratio:9/16;border:1px solid var(--card-border);border-radius:12px;background:radial-gradient(circle at 50% 35%,rgba(212,175,55,.25),transparent 60%),linear-gradient(160deg,#2a2410 0%,#141414 60%,#0a0a0a 100%);cursor:pointer;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px;transition:.3s;color:var(--text-light)}
+.video-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),transparent 50%);pointer-events:none}
+.video-card:hover{border-color:var(--gold-primary);box-shadow:0 5px 25px rgba(212,175,55,.25);transform:translateY(-5px)}
+.play-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold-primary),var(--gold-accent));color:#000;display:flex;align-items:center;justify-content:center;font-size:1.4rem;padding-left:4px;box-shadow:0 0 20px rgba(212,175,55,.5);position:relative;z-index:1}
+.video-title{position:absolute;bottom:16px;right:16px;left:16px;font-weight:700;font-size:1rem;text-align:right;z-index:1}
+.page-card{display:block;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:30px;text-decoration:none;color:var(--text-light);transition:.3s}
+.page-card:hover{border-color:var(--gold-primary);transform:translateY(-5px)}
+.page-card h4{color:var(--gold-primary);font-size:1.2rem;margin-bottom:8px}
+.page-card p{color:var(--text-dim);font-size:.95rem;margin-bottom:15px}
+.page-link{color:var(--gold-primary);font-weight:600}
+.contact{background:var(--card-bg);border-top:1px solid var(--card-border);text-align:center}
+.contact-sub{color:var(--text-dim);margin-top:10px}
+.contact-info{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:25px;font-size:1.1rem}
+footer{text-align:center;padding:20px;color:var(--text-dim);font-size:.85rem;border-top:1px solid #222}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;padding:20px;z-index:2000}
+.modal[hidden]{display:none!important}
+.modal-box{position:relative;width:min(420px,100%)}
+.video-wrap{position:relative;width:100%;aspect-ratio:9/16;background:#000;border-radius:12px;overflow:hidden;border:1px solid var(--gold-primary)}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.modal-close{position:absolute;top:-45px;left:0;background:none;border:1px solid var(--gold-primary);color:var(--gold-primary);width:36px;height:36px;border-radius:50%;cursor:pointer}
+@media(max-width:640px){
+ header{padding:16px 5%}.logo{font-size:20px}
+ .hero{padding:60px 5%}.hero h1{font-size:2rem}.hero p{font-size:1rem}
+ section{padding:50px 5%}.section-title{font-size:1.7rem}
+ .video-grid{grid-template-columns:repeat(2,1fr);gap:12px}.video-title{font-size:.85rem}
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="logo gold-text" id="brand"></div>
-        <a id="headerCta" class="nav-btn" target="_blank" rel="noopener"></a>
-    </header>
+<header>
+  <div class="logo gold-text" id="brand"></div>
+  <a id="headerCta" class="nav-btn" target="_blank" rel="noopener"></a>
+</header>
 
-    <section class="hero">
-        <h1 class="gold-text" id="heroTitle"></h1>
-        <p id="heroText"></p>
-        <div class="cta-group">
-            <a id="heroWhatsapp" class="nav-btn" target="_blank" rel="noopener"></a>
-            <a id="heroEmail" class="btn-secondary"></a>
-        </div>
-    </section>
+<section class="hero">
+  <h1 class="gold-text" id="heroTitle"></h1>
+  <p id="heroText"></p>
+  <div class="cta-group">
+    <a id="heroWhatsapp" class="nav-btn" target="_blank" rel="noopener"></a>
+    <a id="heroEmail" class="btn-secondary"></a>
+  </div>
+</section>
 
-    <section class="services">
-        <h2 class="section-title gold-text" id="servicesTitle"></h2>
-        <div class="grid" id="servicesGrid"></div>
-    </section>
+<section>
+  <h2 class="section-title gold-text" id="servicesTitle"></h2>
+  <div class="grid" id="servicesGrid"></div>
+</section>
 
-    <section class="contact">
-        <h2 class="gold-text" id="contactTitle"></h2>
-        <p class="contact-sub" id="contactText"></p>
-        <div class="contact-info" id="contactInfo"></div>
-    </section>
+<section class="portfolio">
+  <h2 class="section-title gold-text" id="portfolioTitle"></h2>
+  <div id="portfolioContent"></div>
+</section>
 
-    <footer id="footer"></footer>
+<section class="contact">
+  <h2 class="gold-text" id="contactTitle"></h2>
+  <p class="contact-sub" id="contactText"></p>
+  <div class="contact-info" id="contactInfo"></div>
+</section>
 
-    <script src="config.js"></script>
-    <script src="script.js"></script>
+<footer id="footer"></footer>
+
+<div id="videoModal" class="modal" hidden>
+  <div class="modal-box">
+    <button id="modalClose" class="modal-close" type="button">✕</button>
+    <div class="video-wrap">
+      <iframe id="modalFrame" src="" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen frameborder="0"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ==========================================================
+   ✏️ كل التعديلات هنا بس
+   - لإضافة فيديو: انسخ سطر { title, url } وحطه في القسم، وافصل بفاصلة ,
+   - لو فيديو مش بيشتغل: اتأكد إنه Public على فيسبوك
+   ========================================================== */
+const SITE = {
+  brand: "FOX TECH",
+  whatsapp: "201212896898",          // رقم الواتساب بدون + ولا مسافات
+  email: "salehtaalap14@gmail.com",
+  headerButton: "Contact Us",
+
+  hero: {
+    title: "Scale Your Business With Fox Tech 🚀",
+    text: "Your All-in-One Digital Growth Partner. Specializing in High-ROI Meta Ads, Cinematic Video Editing, Graphic Design, SMM & Financial Consulting.",
+    whatsappButton: "Get Started on WhatsApp 💬",
+    emailButton: "Send Email 📧"
+  },
+
+  services: {
+    title: "Our Core Services",
+    items: [
+      { icon: "🎯", name: "Meta Paid Ads", description: "Targeted Facebook & Instagram ad campaigns optimized for maximum return on investment (ROI)." },
+      { icon: "🎬", name: "Video Production", description: "High-converting Reels, Talking-Head videos, dynamic overlays, and cinematic promotional edits." },
+      { icon: "🎨", name: "Graphic Design", description: "Eye-catching ad creatives, full branding packages, and modern social media visuals." },
+      { icon: "📲", name: "Social Media Management", description: "Data-driven content strategy, scheduled posting, page growth, and brand positioning." },
+      { icon: "📊", name: "Financial & Tax Consulting", description: "Legal accounting, financial audit, tax returns, and business entity setup under expert management." }
+    ]
+  },
+
+  portfolio: {
+    title: "Our Work | أعمالنا",
+    sections: [
+      {
+        name: "🎬 فيديوهات تولكينج هيد - قانونية",
+        videos: [
+          { title: "تولكينج هيد 1", url: "https://www.facebook.com/share/v/1DmnuUcYC1/" },
+          { title: "تولكينج هيد 2", url: "https://www.facebook.com/share/v/1MHhkcDnTe/" },
+          { title: "تولكينج هيد 3", url: "https://www.facebook.com/share/v/19RpymmeUS/" },
+          { title: "تولكينج هيد 4", url: "https://www.facebook.com/share/r/1E5H79y8wC/" }
+        ]
+      },
+      {
+        name: "📚 فيديوهات دراسية - التاريخ وقصص الأنبياء",
+        videos: [
+          { title: "دراسي 1", url: "https://www.facebook.com/share/v/1DgQp6MzGC/" },
+          { title: "دراسي 2", url: "https://www.facebook.com/share/r/196wcR7GCq/" },
+          { title: "دراسي 3", url: "https://www.facebook.com/share/v/1F2hg15UnT/" },
+          { title: "دراسي 4", url: "https://www.facebook.com/share/v/1F4AEsRV1L/" },
+          { title: "دراسي 5", url: "https://www.facebook.com/share/v/1964MsX73X/" }
+        ]
+      },
+      {
+        name: "🏋️ فيديوهات الأجهزة الرياضية",
+        videos: [
+          { title: "أجهزة رياضية 1", url: "https://www.facebook.com/share/r/1DUJsnNNWv/" },
+          { title: "أجهزة رياضية 2", url: "https://www.facebook.com/share/r/1Dr9WWd18n/" },
+          { title: "أجهزة رياضية 3", url: "https://www.facebook.com/share/v/19QuMx5Bjw/" },
+          { title: "أجهزة رياضية 4", url: "https://www.facebook.com/share/r/1FNLUikCfi/" }
+        ]
+      }
+    ],
+    pages: {
+      title: "🌐 صفحات شغلنا",
+      items: [
+        { name: "Fox Tech", description: "مونتاج وجرافيك وإدارة صفحات بشكل احترافي كامل.", url: "https://www.facebook.com/share/p/1JrkPhnAme/" }
+      ]
+    }
+  },
+
+  contact: {
+    title: "Ready to Grow Your Brand?",
+    text: "Get in touch with us today for a tailored consultation.",
+    phones: ["+20 1212896898", "+20 1210371836"],
+    location: "Cairo, Egypt"
+  },
+
+  footer: "© 2026 Fox Tech. All rights reserved. | Brand Identity: Black & Gold Premium Edition."
+};
+
+/* ========== الكود (متعدلهوش) ========== */
+(function () {
+  const $ = id => document.getElementById(id);
+  const wa = `https://wa.me/${SITE.whatsapp}`;
+
+  document.title = `${SITE.brand} | Your Digital Growth Partner`;
+  $("brand").textContent = SITE.brand;
+  $("headerCta").textContent = SITE.headerButton;
+  $("headerCta").href = wa;
+
+  $("heroTitle").textContent = SITE.hero.title;
+  $("heroText").textContent = SITE.hero.text;
+  $("heroWhatsapp").textContent = SITE.hero.whatsappButton;
+  $("heroWhatsapp").href = wa;
+  $("heroEmail").textContent = SITE.hero.emailButton;
+  $("heroEmail").href = `mailto:${SITE.email}`;
+
+  $("servicesTitle").textContent = SITE.services.title;
+  SITE.services.items.forEach(s => {
+    const c = document.createElement("div");
+    c.className = "card";
+    c.innerHTML = `<div class="card-icon"></div><h3></h3><p></p>`;
+    c.querySelector(".card-icon").textContent = s.icon;
+    c.querySelector("h3").textContent = s.name;
+    c.querySelector("p").textContent = s.description;
+    $("servicesGrid").appendChild(c);
+  });
+
+  const P = SITE.portfolio;
+  $("portfolioTitle").textContent = P.title;
+  const content = $("portfolioContent");
+
+  P.sections.forEach(sec => {
+    const g = document.createElement("div");
+    g.className = "portfolio-group";
+    const h3 = document.createElement("h3");
+    h3.textContent = sec.name;
+    const vg = document.createElement("div");
+    vg.className = "video-grid";
+    sec.videos.forEach(v => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "video-card";
+      b.innerHTML = `<span class="play-icon">▶</span><span class="video-title"></span>`;
+      b.querySelector(".video-title").textContent = v.title;
+      b.addEventListener("click", () => openVideo(v.url));
+      vg.appendChild(b);
+    });
+    g.append(h3, vg);
+    content.appendChild(g);
+  });
+
+  const pg = document.createElement("div");
+  pg.className = "portfolio-group";
+  const pt = document.createElement("h3");
+  pt.textContent = P.pages.title;
+  const pgrid = document.createElement("div");
+  pgrid.className = "pages-grid";
+  P.pages.items.forEach(item => {
+    const a = document.createElement("a");
+    a.className = "page-card";
+    a.href = item.url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.innerHTML = `<h4></h4><p></p><span class="page-link">شوف الصفحة ↗</span>`;
+    a.querySelector("h4").textContent = item.name;
+    a.querySelector("p").textContent = item.description;
+    pgrid.appendChild(a);
+  });
+  pg.append(pt, pgrid);
+  content.appendChild(pg);
+
+  const modal = $("videoModal"), frame = $("modalFrame");
+  function openVideo(url) {
+    frame.src = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&autoplay=true`;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closeVideo() {
+    frame.src = "";
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+  $("modalClose").addEventListener("click", closeVideo);
+  modal.addEventListener("click", e => { if (e.target === modal) closeVideo(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !modal.hidden) closeVideo(); });
+
+  $("contactTitle").textContent = SITE.contact.title;
+  $("contactText").textContent = SITE.contact.text;
+  const info = $("contactInfo");
+  [
+    `📞 <strong>Call/WhatsApp:</strong> ${SITE.contact.phones.join(" | ")}`,
+    `📧 <strong>Email:</strong> ${SITE.email}`,
+    `📍 <strong>Location:</strong> ${SITE.contact.location}`
+  ].forEach(html => { const d = document.createElement("div"); d.innerHTML = html; info.appendChild(d); });
+
+  $("footer").innerHTML = `<p>${SITE.footer}</p>`;
+})();
+</script>
 </body>
 </html>
