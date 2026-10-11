@@ -48,12 +48,6 @@ section{padding:80px 8%}
 .contact-sub{color:var(--text-dim);margin-top:10px}
 .contact-info{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:25px;font-size:1.1rem}
 footer{text-align:center;padding:20px;color:var(--text-dim);font-size:.85rem;border-top:1px solid #222}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;padding:20px;z-index:2000}
-.modal[hidden]{display:none!important}
-.modal-box{position:relative;width:min(420px,100%)}
-.video-wrap{position:relative;width:100%;aspect-ratio:9/16;background:#000;border-radius:12px;overflow:hidden;border:1px solid var(--gold-primary)}
-.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.modal-close{position:absolute;top:-45px;left:0;background:none;border:1px solid var(--gold-primary);color:var(--gold-primary);width:36px;height:36px;border-radius:50%;cursor:pointer}
 @media(max-width:640px){
  header{padding:16px 5%}.logo{font-size:20px}
  .hero{padding:60px 5%}.hero h1{font-size:2rem}.hero p{font-size:1rem}
@@ -96,24 +90,14 @@ footer{text-align:center;padding:20px;color:var(--text-dim);font-size:.85rem;bor
 
 <footer id="footer"></footer>
 
-<div id="videoModal" class="modal" hidden>
-  <div class="modal-box">
-    <button id="modalClose" class="modal-close" type="button">✕</button>
-    <div class="video-wrap">
-      <iframe id="modalFrame" src="" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen frameborder="0"></iframe>
-    </div>
-  </div>
-</div>
-
 <script>
 /* ==========================================================
    ✏️ كل التعديلات هنا بس
    - لإضافة فيديو: انسخ سطر { title, url } وحطه في القسم، وافصل بفاصلة ,
-   - لو فيديو مش بيشتغل: اتأكد إنه Public على فيسبوك
    ========================================================== */
 const SITE = {
   brand: "FOX TECH",
-  whatsapp: "201212896898",          // رقم الواتساب بدون + ولا مسافات
+  whatsapp: "201212896898",
   email: "salehtaalap14@gmail.com",
   headerButton: "Contact Us",
 
@@ -217,6 +201,11 @@ const SITE = {
   $("portfolioTitle").textContent = P.title;
   const content = $("portfolioContent");
 
+  // فتح الفيديو في تاب جديد على فيسبوك
+  function openVideo(url) {
+    window.open(url, "_blank", "noopener");
+  }
+
   P.sections.forEach(sec => {
     const g = document.createElement("div");
     g.className = "portfolio-group";
@@ -256,21 +245,6 @@ const SITE = {
   });
   pg.append(pt, pgrid);
   content.appendChild(pg);
-
-  const modal = $("videoModal"), frame = $("modalFrame");
-  function openVideo(url) {
-    frame.src = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&autoplay=true`;
-    modal.hidden = false;
-    document.body.style.overflow = "hidden";
-  }
-  function closeVideo() {
-    frame.src = "";
-    modal.hidden = true;
-    document.body.style.overflow = "";
-  }
-  $("modalClose").addEventListener("click", closeVideo);
-  modal.addEventListener("click", e => { if (e.target === modal) closeVideo(); });
-  document.addEventListener("keydown", e => { if (e.key === "Escape" && !modal.hidden) closeVideo(); });
 
   $("contactTitle").textContent = SITE.contact.title;
   $("contactText").textContent = SITE.contact.text;
