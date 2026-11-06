@@ -45,7 +45,7 @@ section>h2{text-align:center;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;
 .tilt:hover{border-color:var(--gold);box-shadow:0 14px 40px rgba(212,175,55,.25)}
 .tilt:hover::after{opacity:1}
 .ic{font-size:34px;margin-bottom:12px}
-.glass h3{color:var(--gold);margin-bottom:8px}
+.glass h3{color:var(--gold);margin-bottom:8px;font-family:'Montserrat','Cairo',sans-serif;font-weight:800}
 .glass p{color:var(--dim);font-size:.95rem}
 .grp{margin-bottom:56px}
 .grp>h3{font-size:1.35rem;color:var(--gold);margin-bottom:22px;padding-inline-start:14px;border-inline-start:3px solid var(--gold)}
@@ -65,9 +65,9 @@ section>h2{text-align:center;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;
 .g img{width:100%;display:block}
 .msg{text-align:center;color:var(--dim);padding:40px;column-span:all}
 .tc{text-align:center}
-.av{width:96px;height:96px;border-radius:50%;margin:0 auto 14px;border:2px solid var(--gold);display:grid;place-items:center;font-weight:900;font-size:1.9rem;color:var(--gold);background:linear-gradient(135deg,#2B2B2B,#111);position:relative;overflow:hidden}
+.av{width:96px;height:96px;border-radius:50%;margin:0 auto 14px;border:2px solid var(--gold);display:grid;place-items:center;font-weight:900;font-size:1.9rem;color:var(--gold);background:linear-gradient(135deg,#2B2B2B,#111);position:relative;overflow:hidden;font-family:'Montserrat',sans-serif}
 .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.rl{color:var(--gold);font-size:.85rem;font-weight:700;margin-bottom:10px}
+.rl{color:var(--gold);font-size:.82rem;font-weight:700;margin-bottom:12px;direction:ltr;font-family:'Montserrat',sans-serif;letter-spacing:.3px}
 .mq{overflow:hidden;direction:ltr;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .mt{display:flex;gap:26px;width:max-content;animation:mq 45s linear infinite}
 .mq:hover .mt{animation-play-state:paused}
@@ -150,14 +150,46 @@ const SITE={
   {d:"social-media-general-business",p:"general",n:{ar:"أعمال عامة",en:"General Business"}}
  ],
  team:[
-  {i:{ar:"ص",en:"S"},ph:"team/saleh.jpg",n:{ar:"صالح ثعلب",en:"Saleh Fox"},r:{ar:"المؤسس ومدير الفريق | مونتير فيديو | محاسب قانوني",en:"Founder & Team Manager | Video Editor | Chartered Accountant"},
-   b:{ar:"القائد والمشرف العام على العمليات داخل Fox Tech، ينسّق بين الميديا بايينج والجرافيك والمونتاج عشان كل مشروع يخرج بأعلى جودة. خبرة أكتر من 5 سنين في الإدارة والتنظيم، وعمل سابقاً في شركات تنظيم المعارض EXPO BOOK و Pyramids.",en:"Leads day-to-day operations at Fox Tech and coordinates media buying, graphic design and video so every project ships at top quality. 5+ years in management and organizing, previously with exhibition companies EXPO BOOK and Pyramids."}},
-  {i:{ar:"م",en:"M"},ph:"team/mai.jpg",n:{ar:"مي محمد",en:"Mai Mohamed"},r:{ar:"مصممة جرافيك",en:"Graphic Designer"},
-   b:{ar:"مسؤولة عن الهويات البصرية والشعارات والتصاميم الإعلانية. محترفة فوتوشوب وبتحوّل الفكرة للوحة تخطف عين العميل من أول لحظة.",en:"Creates brand identities, logos and ad designs. A Photoshop pro who turns ideas into visuals that catch the eye instantly."}},
-  {i:{ar:"ح",en:"H"},ph:"team/hassan.jpg",n:{ar:"حسن دكتور",en:"Hassan Doctor"},r:{ar:"خبير إعلانات ممولة",en:"Media Buyer"},
-   b:{ar:"بيخطط ويطلق ويدير الحملات الممولة بشكل احترافي عشان يحقق أعلى عائد على الاستثمار ويكبّر مبيعات البراندات.",en:"Plans, launches and manages paid campaigns for the highest ROI and growing brand sales."}},
-  {i:{ar:"ح",en:"H"},ph:"team/hazem.jpg",n:{ar:"حازم زوما",en:"Hazem Zoma"},r:{ar:"إدارة الصفحات والتفاعل الحي",en:"Community Manager"},
-   b:{ar:"نبض الصفحات وتواجدها الدائم: رد فوري على الرسائل والتعليقات، ومتابعة النشر والستوريز والكاروسيل عشان الصفحة تفضل نشطة.",en:"The pulse of the pages: instant replies to messages and comments, and live posting of stories, carousels and posts."}}
+  {
+   i:"SF",
+   ph:"team/saleh.jpg",
+   n:"Saleh Fox",
+   r:"Founder & Team Manager | Video Editor | Chartered Accountant",
+   b:{
+    ar:"القائد والمشرف العام على العمليات داخل Fox Tech، ينسّق بين الميديا بايينج والجرافيك والمونتاج عشان كل مشروع يخرج بأعلى جودة. خبرة أكتر من 5 سنين في الإدارة والتنظيم، وعمل سابقاً في شركات تنظيم المعارض EXPO BOOK و Pyramids.",
+    en:"Leads day-to-day operations at Fox Tech and coordinates media buying, graphic design and video so every project ships at top quality. 5+ years in management and organizing, previously with exhibition companies EXPO BOOK and Pyramids."
+   }
+  },
+  {
+   i:"MM",
+   ph:"team/mai.jpg",
+   n:"Mai Mohamed",
+   r:"Senior Graphic Designer | Brand Identity Specialist",
+   b:{
+    ar:"العقل الإبداعي المسؤول عن بناء الهويات البصرية المتكاملة والشعارات والتصاميم الإعلانية الاحترافية. متمكنة في برامج Adobe Photoshop وأدوات التصميم الحديثة لتحويل أفكار البراندات إلى لوحات بصرية جذابة تترك بصمة قوية عند الجمهور وتضاعف التفاعل.",
+    en:"The creative mind behind complete brand identities, logos, and high-converting social media visuals. Mastering Adobe Photoshop and modern design suites, she transforms brand concepts into striking visual stories that capture attention from the very first glance."
+   }
+  },
+  {
+   i:"HD",
+   ph:"team/hassan.jpg",
+   n:"Hassan Doctor",
+   r:"Senior Media Buyer | Performance Marketing Specialist",
+   b:{
+    ar:"الخبير الاستراتيجي المسؤول عن تخطيط وإطلاق وإدارة الحملات الإعلانية الممولة عبر منصات Meta. يعتمد على تحليل البيانات الدقيقة ودراسة سلوك الجمهور واستهداف الشرائح الشرائية الصح لتحقيق أعلى عائد على الاستثمار (ROI) ومضاعفة المبيعات بأفضل تكلفة.",
+    en:"Strategic performance marketer specializing in planning, launching, and scaling paid ad campaigns across Meta platforms. Driven by data analytics, audience targeting, and A/B testing to maximize ROI, lower acquisition costs, and skyrocket brand sales."
+   }
+  },
+  {
+   i:"HZ",
+   ph:"team/hazem.jpg",
+   n:"Hazem Zoma",
+   r:"Community Manager | Social Media Specialist",
+   b:{
+    ar:"نبض الصفحات والمسؤول عن التواجد الحي والتفاعل المباشر مع الجمهور على مدار 24 ساعة. يدير الرسائل والتعليقات باحترافية وسرعة عالية، مع الإشراف الكامل على النشر اليومي الحي للستوريز والكاروسيل والبوستات لضمان نشاط الصفحة الدائم وبناء ثقة قوية مع العملاء.",
+    en:"The 24/7 pulse of client pages, managing real-time audience engagement, instant message replies, and comment moderation. He oversees live daily publishing of stories, carousels, and posts to keep pages consistently active and build lasting customer trust."
+   }
+  }
  ],
  /* [الاسم, ملف اللوجو في partners, لينك الصفحة (فاضي = من غير لينك)] */
  partners:[
