@@ -2,314 +2,249 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fox Tech</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:wght@400;600;800&family=Russo+One&display=swap" rel="stylesheet">
 <style>
-:root{--g1:#FFF099;--gold:#D4AF37;--gold2:#B8860B;--bg:#0b0b0b;--card:#141414;--line:#262626;--text:#fff;--dim:#9a9a9a;--sec:#0e0e0e;--head:rgba(11,11,11,.88)}
-body.light{--g1:#C9A227;--gold:#A67C00;--gold2:#7a5a00;--bg:#f7f5ef;--card:#fff;--line:#e3dfd3;--text:#111;--dim:#555;--sec:#efebdf;--head:rgba(247,245,239,.92)}
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat','Cairo',sans-serif}
+:root{--bg:#111;--card:rgba(255,255,255,.04);--gold:#D4AF37;--gold2:#B8860B;--g1:#FFF099;--line:rgba(212,175,55,.3);--tx:#fff;--dim:#a8a8a8;--hd:rgba(17,17,17,.8);--sec:#161616;--fb:radial-gradient(circle at 50% 40%,rgba(212,175,55,.35),transparent 60%),repeating-linear-gradient(90deg,transparent 0 14px,rgba(212,175,55,.12) 14px 16px),linear-gradient(160deg,#2B2B2B,#111)}
+body.light{--bg:#f6f3ea;--card:#fff;--gold:#A67C00;--gold2:#7a5a00;--g1:#C9A227;--line:rgba(166,124,0,.35);--tx:#161616;--dim:#5b5b5b;--hd:rgba(246,243,234,.88);--sec:#ece7d8}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .4s,color .4s}
-.gold{background:linear-gradient(135deg,var(--g1) 0%,var(--gold) 50%,var(--gold2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 8%;background:var(--head);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:1000}
+body{font-family:'Cairo','Montserrat',sans-serif;background:var(--bg);color:var(--tx);line-height:1.7;overflow-x:hidden;transition:background .4s,color .4s}
+html[lang=en] body{font-family:'Montserrat','Cairo',sans-serif}
+html[lang=en] h1,html[lang=en] h2,html[lang=en] .logo{font-family:'Russo One','Montserrat',sans-serif;font-weight:400}
+#dust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+main,footer{position:relative;z-index:1}
+.gt{background:linear-gradient(135deg,var(--g1),var(--gold) 50%,var(--gold2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 6%;background:var(--hd);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .logo{font-size:24px;font-weight:900;letter-spacing:3px;white-space:nowrap}
-.navlinks{display:flex;gap:6px}
-.navlinks a{color:var(--dim);text-decoration:none;padding:8px 12px;font-weight:600;border-radius:8px;transition:.3s}
-.navlinks a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
-.tools{display:flex;gap:10px;align-items:center}
-.icon-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:700;font-size:.85rem;transition:.3s;white-space:nowrap}
-.icon-btn:hover{background:rgba(212,175,55,.12)}
-.btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;padding:11px 26px;border-radius:8px;font-weight:700;text-decoration:none;transition:.3s;white-space:nowrap}
-.btn:hover{box-shadow:0 0 25px rgba(212,175,55,.55);transform:translateY(-2px)}
-.btn-ghost{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:11px 26px;border-radius:8px;font-weight:600;text-decoration:none;transition:.3s}
-.btn-ghost:hover{background:rgba(212,175,55,.1)}
-.hero{position:relative;text-align:center;padding:110px 8% 90px;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 30% 40%,rgba(212,175,55,.18),transparent 45%),radial-gradient(circle at 70% 60%,rgba(184,134,11,.14),transparent 45%);animation:drift 12s ease-in-out infinite alternate;z-index:0}
-@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-3%,2%) scale(1.08)}}
-.hero>*{position:relative;z-index:1}
-.hero h1{font-size:3.2rem;font-weight:800;margin-bottom:20px;text-transform:uppercase;line-height:1.2}
-.hero p{font-size:1.15rem;color:var(--dim);max-width:720px;margin:0 auto 36px}
-.cta{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
-section{padding:90px 8%}
-.title{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:12px}
-.subtitle{text-align:center;color:var(--dim);margin-bottom:55px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px;transition:.35s}
-.card:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 10px 35px rgba(212,175,55,.15)}
-.card .ic{font-size:34px;margin-bottom:16px}
-.card h3{color:var(--gold);font-size:1.25rem;margin-bottom:10px}
-.card p{color:var(--dim);font-size:.95rem}
-.work{background:var(--sec);border-top:1px solid var(--line)}
-.group{margin-bottom:70px}
-.group h3{font-size:1.35rem;color:var(--gold);margin-bottom:8px;padding-inline-start:14px;border-inline-start:3px solid var(--gold)}
-.group .desc{color:var(--dim);font-size:.92rem;margin-bottom:24px;padding-inline-start:17px}
-.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
-.vcard{position:relative;aspect-ratio:9/16;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;padding:0;color:#fff;text-align:start;transition:transform .15s ease-out,border-color .3s,box-shadow .3s;background:#111}
-.vcard .cover{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
-.vcard.fallback .cover{background:
-  linear-gradient(90deg,#000 0 8%,transparent 8% 92%,#000 92%),
-  repeating-linear-gradient(90deg,transparent 0 14px,rgba(212,175,55,.15) 14px 16px),
-  radial-gradient(circle at 50% 40%,rgba(212,175,55,.35),transparent 60%),
-  linear-gradient(160deg,#2a2410,#141414 60%,#080808)}
-.vcard::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9),transparent 55%);z-index:1}
-.vcard:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 12px 40px rgba(212,175,55,.3)}
-.vcard:hover .cover{transform:scale(1.06)}
-.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;display:flex;align-items:center;justify-content:center;font-size:1.2rem;padding-inline-start:4px;box-shadow:0 0 25px rgba(212,175,55,.6);z-index:2;transition:.3s}
-.vcard:hover .play{transform:translate(-50%,-50%) scale(1.12)}
-.vtitle{position:absolute;bottom:16px;inset-inline:16px;font-weight:700;font-size:.95rem;z-index:2}
-.tag{position:absolute;top:12px;inset-inline-end:12px;z-index:2;background:rgba(0,0,0,.6);border:1px solid var(--gold);color:var(--gold);font-size:.7rem;padding:3px 8px;border-radius:20px}
-.contact-info{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;font-size:1.05rem}
+nav{display:flex;gap:4px}
+nav a{color:var(--dim);text-decoration:none;padding:6px 12px;border-radius:8px;font-weight:600;transition:.3s}
+nav a:hover{color:var(--gold)}
+.tools{display:flex;gap:8px;align-items:center}
+.ib{background:none;border:1px solid var(--gold);color:var(--gold);padding:7px 13px;border-radius:8px;cursor:pointer;font:700 .85rem inherit;font-family:inherit}
+.btn,.ghost{display:inline-block;padding:11px 26px;border-radius:10px;font-weight:700;text-decoration:none;transition:.3s;white-space:nowrap}
+.btn{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000}
+.btn:hover{box-shadow:0 0 26px rgba(212,175,55,.6);transform:translateY(-2px)}
+.ghost{border:1px solid var(--gold);color:var(--gold)}
+.ghost:hover{background:rgba(212,175,55,.12)}
+.hero{text-align:center;padding:120px 6% 90px;background:radial-gradient(circle at 50% 30%,rgba(212,175,55,.16),transparent 60%)}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.25;margin-bottom:20px;font-weight:900}
+.hero p{font-size:1.15rem;color:var(--dim);max-width:720px;margin:0 auto 34px}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+section{padding:90px 6%}
+section:nth-of-type(even){background:var(--sec)}
+section>h2{text-align:center;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:8px}
+.sub{text-align:center;color:var(--dim);margin-bottom:50px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.glass{background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;padding:30px}
+.tilt{position:relative;overflow:hidden;transition:transform .15s ease-out,box-shadow .3s,border-color .3s}
+.tilt::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,240,160,.3),transparent 45%)}
+.tilt:hover{border-color:var(--gold);box-shadow:0 14px 40px rgba(212,175,55,.25)}
+.tilt:hover::after{opacity:1}
+.ic{font-size:34px;margin-bottom:12px}
+.glass h3{color:var(--gold);margin-bottom:8px}
+.glass p{color:var(--dim);font-size:.95rem}
+.grp{margin-bottom:56px}
+.grp>h3{font-size:1.35rem;color:var(--gold);margin-bottom:22px;padding-inline-start:14px;border-inline-start:3px solid var(--gold)}
+.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.v{display:block;aspect-ratio:9/16;border:1px solid var(--line);border-radius:16px;background:var(--fb);background-size:cover;background-position:center;color:#fff;text-decoration:none}
+.v::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.85),transparent 55%)}
+.v b{position:absolute;z-index:2;bottom:14px;inset-inline:14px}
+.pl{position:absolute;z-index:2;top:50%;left:50%;width:62px;height:62px;margin:-31px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;display:grid;place-items:center;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(212,175,55,.6)}70%{box-shadow:0 0 0 22px rgba(212,175,55,0)}100%{box-shadow:0 0 0 0 rgba(212,175,55,0)}}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
+.tab{background:var(--card);border:1px solid var(--line);color:var(--tx);padding:9px 20px;border-radius:30px;cursor:pointer;font:600 .92rem inherit;font-family:inherit;transition:.3s}
+.tab:hover{border-color:var(--gold)}
+.tab.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;border-color:transparent}
+.gg{columns:4 230px;column-gap:16px}
+.gg[hidden]{display:none}
+.g{display:block;break-inside:avoid;margin-bottom:16px;border-radius:12px;border:1px solid var(--line);cursor:zoom-in}
+.g img{width:100%;display:block}
+.msg{text-align:center;color:var(--dim);padding:40px;column-span:all}
+.tc{text-align:center}
+.av{width:96px;height:96px;border-radius:50%;margin:0 auto 14px;border:2px solid var(--gold);display:grid;place-items:center;font-weight:900;font-size:1.9rem;color:var(--gold);background:linear-gradient(135deg,#2B2B2B,#111);position:relative;overflow:hidden}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rl{color:var(--gold);font-size:.85rem;font-weight:700;margin-bottom:10px}
+.mq{overflow:hidden;direction:ltr;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mt{display:flex;gap:26px;width:max-content;animation:mq 45s linear infinite}
+.mq:hover .mt{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.pt{width:150px;height:110px;border-radius:14px;background:#f4f1e8;display:grid;place-items:center;padding:12px;border:1px solid var(--line);filter:grayscale(.7);transition:.3s}
+a.pt:hover{filter:none;box-shadow:0 0 28px rgba(212,175,55,.65);border-color:var(--gold);transform:scale(1.07)}
+.pt img{max-width:100%;max-height:100%;object-fit:contain}
+.ci{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:26px}
+.ci a{color:var(--tx);text-decoration:none}
+.soc{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 footer{text-align:center;padding:26px;color:var(--dim);font-size:.85rem;border-top:1px solid var(--line)}
-.reveal{opacity:0;transform:translateY(30px);transition:.8s ease}
-.reveal.show{opacity:1;transform:none}
-@media(max-width:900px){.navlinks{display:none}}
-@media(max-width:640px){
- header{padding:14px 5%}.logo{font-size:18px}.icon-btn{padding:7px 10px;font-size:.78rem}
- .hero{padding:70px 5%}.hero h1{font-size:2rem}.hero p{font-size:1rem}
- section{padding:60px 5%}.title{font-size:1.7rem}
- .vgrid{grid-template-columns:repeat(2,1fr);gap:12px}.vtitle{font-size:.8rem}
-}
+#lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.93);display:none;align-items:center;justify-content:center;direction:ltr}
+#lb.on{display:flex}
+#lb img{max-width:92vw;max-height:88vh;border:1px solid var(--line);border-radius:10px}
+.lbb{position:absolute;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.6);border:1px solid var(--gold);color:var(--gold);font-size:1.2rem;cursor:pointer}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.rv.show{opacity:1;transform:none}
+@media(max-width:900px){nav{display:none}}
+@media(max-width:640px){header{padding:12px 4%}.logo{font-size:18px}.ib{padding:6px 9px}.hd{display:none}section{padding:60px 5%}.hero{padding:80px 5% 60px}.vg{grid-template-columns:repeat(2,1fr);gap:12px}.gg{columns:2 140px;column-gap:10px}.pt{width:120px;height:90px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-
+<canvas id="dust"></canvas>
 <header>
-  <div class="logo gold" id="brand"></div>
-  <nav class="navlinks">
-    <a href="#services" id="navServices"></a>
-    <a href="#work" id="navWork"></a>
-    <a href="#contact" id="navContact"></a>
-  </nav>
-  <div class="tools">
-    <button class="icon-btn" id="langBtn" type="button"></button>
-    <button class="icon-btn" id="themeBtn" type="button"></button>
-    <a id="headerCta" class="btn" target="_blank" rel="noopener"></a>
-  </div>
+  <div class="logo gt">FOX TECH</div>
+  <nav id="nv"></nav>
+  <div class="tools"><button class="ib" id="lg"></button><button class="ib" id="tb"></button><a class="btn hd" id="hc" target="_blank" rel="noopener"></a></div>
 </header>
-
+<main>
 <section class="hero">
-  <h1 class="gold" id="heroTitle"></h1>
-  <p id="heroText"></p>
-  <div class="cta">
-    <a id="heroWhatsapp" class="btn" target="_blank" rel="noopener"></a>
-    <a id="heroEmail" class="btn-ghost"></a>
-  </div>
+  <h1 class="gt" id="h1"></h1><p id="hp"></p>
+  <div class="cta"><a class="btn" id="hw" target="_blank" rel="noopener"></a><a class="ghost" id="he"></a></div>
 </section>
-
-<section id="services">
-  <h2 class="title gold" id="servicesTitle"></h2>
-  <p class="subtitle" id="servicesSub"></p>
-  <div class="grid" id="servicesGrid"></div>
-</section>
-
-<section class="work" id="work">
-  <h2 class="title gold" id="workTitle"></h2>
-  <p class="subtitle" id="workSub"></p>
-  <div id="workContent"></div>
-</section>
-
-<section id="contact">
-  <h2 class="title gold" id="contactTitle"></h2>
-  <p class="subtitle" id="contactText"></p>
-  <div class="contact-info" id="contactInfo"></div>
-</section>
-
-<footer id="footer"></footer>
+<section id="services"><h2 class="gt"></h2><p class="sub"></p><div class="grid" id="sv"></div></section>
+<section id="videos"><h2 class="gt"></h2><p class="sub"></p><div id="vd"></div></section>
+<section id="designs"><h2 class="gt"></h2><p class="sub"></p><div class="tabs" id="tabs"></div><div id="gl"></div></section>
+<section id="team"><h2 class="gt"></h2><p class="sub"></p><div class="grid" id="tm"></div></section>
+<section id="partners"><h2 class="gt"></h2><p class="sub"></p><div class="mq"><div class="mt" id="pm"></div></div></section>
+<section id="contact"><h2 class="gt"></h2><p class="sub"></p><div class="ci" id="ci"></div><div class="soc" id="so"></div></section>
+</main>
+<footer id="ft"></footer>
+<div id="lb"><button class="lbb" id="lx" style="top:18px;right:18px">✕</button><button class="lbb" id="lp" style="left:18px">‹</button><button class="lbb" id="ln" style="right:18px">›</button><img id="li" alt=""></div>
 
 <script>
-/* ==========================================================
-   ✏️ كل التعديلات هنا بس
-   - كل نص ليه نسختين: ar (عربي) و en (إنجليزي)
-   - فيديو جديد: انسخ سطر { title:{ar,en}, url } وحطه في القسم وافصل بفاصلة ,
-   - cover: صورة ثابتة لكل الكروت. لو فاضي "" يظهر التصميم الافتراضي.
-     لتغييرها: ارفع صورة في فولدر thumbs باسم cover.jpg واكتب "thumbs/cover.jpg"
-   ========================================================== */
-const SITE = {
-  brand: "FOX TECH",
-  whatsapp: "201212896898",
-  email: "salehtaalap14@gmail.com",
-  cover: "",
-
-  hero: {
-    title: { ar: "كبّر براندك مع Fox Tech 🚀", en: "Scale Your Brand With Fox Tech 🚀" },
-    text: {
-      ar: "مونتاج سينمائي • تصميم يشد • إدارة صفحات • مواقع تفاعلية ثنائية وثلاثية الأبعاد",
-      en: "Cinematic Montage • Eye-catching Design • Page Management • Interactive 2D & 3D Websites"
-    }
-  },
-
-  services: {
-    title: { ar: "خدماتنا", en: "Our Services" },
-    sub: { ar: "كل اللي يحتاجه براندك في مكان واحد", en: "Everything your brand needs in one place" },
-    items: [
-      { icon: "🎯", name: { ar: "إعلانات ميتا المدفوعة", en: "Meta Paid Ads" },
-        desc: { ar: "حملات على فيسبوك وانستجرام مبنية على عائد قابل للقياس.", en: "Facebook & Instagram campaigns built around measurable return." } },
-      { icon: "🎬", name: { ar: "إنتاج الفيديو", en: "Video Production" },
-        desc: { ar: "ريلز، توكينج هيد، تأثيرات حركية ومونتاج سينمائي.", en: "Reels, talking-head videos, motion overlays and cinematic edits." } },
-      { icon: "🎨", name: { ar: "التصميم الجرافيكي", en: "Graphic Design" },
-        desc: { ar: "تصاميم إعلانية وهويات بصرية كاملة وبوستات تشد العين.", en: "Ad creatives, full branding packages and eye-catching visuals." } },
-      { icon: "📲", name: { ar: "إدارة السوشيال ميديا", en: "Social Media Management" },
-        desc: { ar: "استراتيجية محتوى، نشر منظم، نمو للصفحات وتمركز للبراند.", en: "Content strategy, scheduled publishing, page growth and positioning." } },
-      { icon: "🌐", name: { ar: "مواقع تفاعلية ثلاثية الأبعاد", en: "Interactive & 3D Websites" },
-        desc: { ar: "مواقع بحركة وتفاعل، وتجارب ثنائية وثلاثية الأبعاد.", en: "Motion-driven websites with interactive 2D and 3D experiences." } },
-      { icon: "📊", name: { ar: "الاستشارات المالية والضريبية", en: "Financial & Tax Consulting" },
-        desc: { ar: "محاسبة، مراجعة مالية، إقرارات ضريبية، وتأسيس الكيانات التجارية.", en: "Accounting, financial audit, tax returns and business setup." } }
-    ]
-  },
-
-  work: {
-    title: { ar: "🎞️ شغلنا بيتكلم عننا", en: "🎞️ Our Work Speaks For Us" },
-    sub: { ar: "مونتاج سينمائي، تصميم يشد، وإدارة صفحات بتجيب نتايج. شوف بنفسك 👇", en: "Cinematic montage, eye-catching design and page management that delivers. See for yourself 👇" },
-    sections: [
-      {
-        name: { ar: "⚖️ محتوى قانوني", en: "⚖️ Legal Content" },
-        desc: { ar: "شرح مبسط وواضح يوصل للناس بسرعة.", en: "Simple, clear explainers that reach people fast." },
-        videos: [
-          { title: { ar: "قانوني 01", en: "Legal 01" }, url: "https://www.facebook.com/share/v/1DmnuUcYC1/" },
-          { title: { ar: "قانوني 02", en: "Legal 02" }, url: "https://www.facebook.com/share/v/1MHhkcDnTe/" },
-          { title: { ar: "قانوني 03", en: "Legal 03" }, url: "https://www.facebook.com/share/v/19RpymmeUS/" },
-          { title: { ar: "قانوني 04", en: "Legal 04" }, url: "https://www.facebook.com/share/r/1E5H79y8wC/" }
-        ]
-      },
-      {
-        name: { ar: "📚 محتوى تعليمي - التاريخ وقصص الأنبياء", en: "📚 Educational - History & Prophets' Stories" },
-        desc: { ar: "قصص وتاريخ بإيقاع يخلي المشاهد يكمّل لآخر ثانية.", en: "History and stories paced to keep viewers watching until the end." },
-        videos: [
-          { title: { ar: "تعليمي 01", en: "Education 01" }, url: "https://www.facebook.com/share/v/1DgQp6MzGC/" },
-          { title: { ar: "تعليمي 02", en: "Education 02" }, url: "https://www.facebook.com/share/r/196wcR7GCq/" },
-          { title: { ar: "تعليمي 03", en: "Education 03" }, url: "https://www.facebook.com/share/v/1F2hg15UnT/" },
-          { title: { ar: "تعليمي 04", en: "Education 04" }, url: "https://www.facebook.com/share/v/1F4AEsRV1L/" },
-          { title: { ar: "تعليمي 05", en: "Education 05" }, url: "https://www.facebook.com/share/v/1964MsX73X/" },
-          { title: { ar: "نموذج مونتاج", en: "Montage Sample" }, url: "https://www.facebook.com/share/p/1JrkPhnAme/" }
-        ]
-      },
-      {
-        name: { ar: "🏋️ أجهزة رياضية", en: "🏋️ Fitness Equipment" },
-        desc: { ar: "لقطات قريبة وتقطيع احترافي يبرز المنتج.", en: "Close shots and sharp cuts that highlight the product." },
-        videos: [
-          { title: { ar: "رياضي 01", en: "Fitness 01" }, url: "https://www.facebook.com/share/r/1DUJsnNNWv/" },
-          { title: { ar: "رياضي 02", en: "Fitness 02" }, url: "https://www.facebook.com/share/r/1Dr9WWd18n/" },
-          { title: { ar: "رياضي 03", en: "Fitness 03" }, url: "https://www.facebook.com/share/v/19QuMx5Bjw/" },
-          { title: { ar: "رياضي 04", en: "Fitness 04" }, url: "https://www.facebook.com/share/r/1FNLUikCfi/" }
-        ]
-      }
-    ]
-  },
-
-  contact: {
-    title: { ar: "خلينا نكبّر براندك", en: "Let's Build Something Great" },
-    text: { ar: "قولنا على براندك ونجهزلك الخطة المناسبة.", en: "Tell us about your brand and we'll shape the right plan for it." },
-    phones: ["+20 1212896898", "+20 1210371836"],
-    location: { ar: "القاهرة، مصر", en: "Cairo, Egypt" }
-  },
-
-  footer: { ar: "© 2026 Fox Tech. جميع الحقوق محفوظة.", en: "© 2026 Fox Tech. All rights reserved." }
+/* ✏️ كل البيانات هنا: النصوص، اللينكات، الفيديوهات، الشركاء */
+const SITE={
+ wa:"201212896898",email:"salehtaalap14@gmail.com",phones:["+20 1212896898","+20 1210371836"],
+ social:{facebook:"",instagram:"",telegram:""},
+ hero:{t:{ar:"كبّر براندك مع Fox Tech 🚀",en:"Scale Your Brand With Fox Tech 🚀"},
+  p:{ar:"مونتاج سينمائي • تصميم جرافيك • حملات ممولة • إدارة صفحات • مواقع تفاعلية",en:"Cinematic Video • Graphic Design • Paid Ads • Page Management • Interactive Websites"}},
+ sec:{
+  services:{n:{ar:"الخدمات",en:"Services"},t:{ar:"خدماتنا",en:"Our Services"},s:{ar:"كل اللي يحتاجه براندك في مكان واحد",en:"Everything your brand needs in one place"}},
+  videos:{n:{ar:"الفيديوهات",en:"Videos"},t:{ar:"معرض الفيديوهات",en:"Video Portfolio"},s:{ar:"دوس على أي فيديو يفتح على فيسبوك",en:"Tap any video to watch it on Facebook"}},
+  designs:{n:{ar:"التصاميم",en:"Designs"},t:{ar:"معرض التصميمات",en:"Design Portfolio"},s:{ar:"اختار القسم وشوف شغلنا بحجمه الكامل",en:"Pick a category and view our work in full size"}},
+  team:{n:{ar:"الفريق",en:"Team"},t:{ar:"فريق العمل",en:"Meet The Team"},s:{ar:"ناس بتحب شغلها وبتتقنه",en:"People who love what they do"}},
+  partners:{n:{ar:"الشركاء",en:"Partners"},t:{ar:"شركاء النجاح",en:"Success Partners"},s:{ar:"دوس على اللوجو تفتح صفحة العميل",en:"Tap a logo to open the client's page"}},
+  contact:{n:{ar:"تواصل",en:"Contact"},t:{ar:"خلينا نكبّر براندك",en:"Let's Grow Your Brand"},s:{ar:"قولنا على براندك ونجهزلك الخطة المناسبة",en:"Tell us about your brand and we'll shape the plan"}}
+ },
+ services:[
+  ["🎯",{ar:"إعلانات ميتا الممولة",en:"Meta Paid Ads"},{ar:"حملات على فيسبوك وانستجرام مبنية على عائد قابل للقياس.",en:"Facebook & Instagram campaigns built around measurable return."}],
+  ["🎬",{ar:"إنتاج ومونتاج الفيديو",en:"Video Production"},{ar:"ريلز وتوكينج هيد وتأثيرات حركية ومونتاج سينمائي.",en:"Reels, talking-head videos, motion effects and cinematic edits."}],
+  ["🎨",{ar:"التصميم الجرافيكي",en:"Graphic Design"},{ar:"شعارات وهويات بصرية وتصاميم إعلانية تشد العين.",en:"Logos, brand identities and eye-catching ad designs."}],
+  ["📲",{ar:"إدارة السوشيال ميديا",en:"Social Media"},{ar:"استراتيجية محتوى ونشر منظم وتواجد دائم على الصفحات.",en:"Content strategy, scheduled posting and constant page presence."}],
+  ["🌐",{ar:"مواقع تفاعلية 2D و 3D",en:"Interactive 2D & 3D Sites"},{ar:"مواقع بحركة وتفاعل وتجارب ثنائية وثلاثية الأبعاد.",en:"Motion-driven websites with interactive 2D and 3D experiences."}],
+  ["📊",{ar:"استشارات مالية وضريبية",en:"Financial & Tax"},{ar:"محاسبة ومراجعة وإقرارات ضريبية وتأسيس كيانات تجارية.",en:"Accounting, audit, tax returns and business setup."}]
+ ],
+ videos:[
+  {n:{ar:"⚖️ المحتوى القانوني",en:"⚖️ Legal Content"},p:{ar:"قانوني",en:"Legal"},c:"thumbs/cover-legal.jpg",u:["https://www.facebook.com/share/v/1DmnuUcYC1/","https://www.facebook.com/share/v/1MHhkcDnTe/","https://www.facebook.com/share/v/19RpymmeUS/","https://www.facebook.com/share/r/1E5H79y8wC/"]},
+  {n:{ar:"📚 المحتوى التعليمي وقصص الأنبياء",en:"📚 Educational & History Content"},p:{ar:"تعليمي",en:"Education"},c:"thumbs/cover-edu.jpg",u:["https://www.facebook.com/share/v/1DgQp6MzGC/","https://www.facebook.com/share/r/196wcR7GCq/","https://www.facebook.com/share/v/1F2hg15UnT/","https://www.facebook.com/share/v/1F4AEsRV1L/","https://www.facebook.com/share/v/1964MsX73X/","https://www.facebook.com/share/p/1JrkPhnAme/"]}
+ ],
+ cats:[
+  {d:"Logo",p:"logo",n:{ar:"الشعارات",en:"Logos"}},
+  {d:"branding",p:"branding",n:{ar:"الهوية البصرية",en:"Branding"}},
+  {d:"prints",p:"print",n:{ar:"المطبوعات والمناسبات",en:"Prints & Events"}},
+  {d:"restaurants",p:"restaurant",n:{ar:"المطاعم",en:"Restaurants"}},
+  {d:"social-media-restaurants-cafes",p:"cafe",n:{ar:"الكافيهات",en:"Cafes"}},
+  {d:"social-media-doctors-clinics",p:"clinic",n:{ar:"العيادات والصيدليات",en:"Clinics & Pharmacies"}},
+  {d:"social-media-education",p:"edu",n:{ar:"التعليم والكورسات",en:"Education"}},
+  {d:"social-media-general-business",p:"general",n:{ar:"أعمال عامة",en:"General Business"}}
+ ],
+ team:[
+  {i:{ar:"ص",en:"S"},ph:"team/saleh.jpg",n:{ar:"صالح ثعلب",en:"Saleh Fox"},r:{ar:"المؤسس ومدير الفريق | مونتير فيديو | محاسب قانوني",en:"Founder & Team Manager | Video Editor | Chartered Accountant"},
+   b:{ar:"القائد والمشرف العام على العمليات داخل Fox Tech، ينسّق بين الميديا بايينج والجرافيك والمونتاج عشان كل مشروع يخرج بأعلى جودة. خبرة أكتر من 5 سنين في الإدارة والتنظيم، وعمل سابقاً في شركات تنظيم المعارض EXPO BOOK و Pyramids.",en:"Leads day-to-day operations at Fox Tech and coordinates media buying, graphic design and video so every project ships at top quality. 5+ years in management and organizing, previously with exhibition companies EXPO BOOK and Pyramids."}},
+  {i:{ar:"م",en:"M"},ph:"team/mai.jpg",n:{ar:"مي محمد",en:"Mai Mohamed"},r:{ar:"مصممة جرافيك",en:"Graphic Designer"},
+   b:{ar:"مسؤولة عن الهويات البصرية والشعارات والتصاميم الإعلانية. محترفة فوتوشوب وبتحوّل الفكرة للوحة تخطف عين العميل من أول لحظة.",en:"Creates brand identities, logos and ad designs. A Photoshop pro who turns ideas into visuals that catch the eye instantly."}},
+  {i:{ar:"ح",en:"H"},ph:"team/hassan.jpg",n:{ar:"حسن دكتور",en:"Hassan Doctor"},r:{ar:"خبير إعلانات ممولة",en:"Media Buyer"},
+   b:{ar:"بيخطط ويطلق ويدير الحملات الممولة بشكل احترافي عشان يحقق أعلى عائد على الاستثمار ويكبّر مبيعات البراندات.",en:"Plans, launches and manages paid campaigns for the highest ROI and growing brand sales."}},
+  {i:{ar:"ح",en:"H"},ph:"team/hazem.jpg",n:{ar:"حازم زوما",en:"Hazem Zoma"},r:{ar:"إدارة الصفحات والتفاعل الحي",en:"Community Manager"},
+   b:{ar:"نبض الصفحات وتواجدها الدائم: رد فوري على الرسائل والتعليقات، ومتابعة النشر والستوريز والكاروسيل عشان الصفحة تفضل نشطة.",en:"The pulse of the pages: instant replies to messages and comments, and live posting of stories, carousels and posts."}}
+ ],
+ /* [الاسم, ملف اللوجو في partners, لينك الصفحة (فاضي = من غير لينك)] */
+ partners:[
+  ["AVÈRA","1.png","https://www.facebook.com/share/1FK4dLmpqX/?mibextid=wwXIfr"],["VEDRO","2.png",""],["SONDOS&CO","3.png",""],
+  ["Topwin","4.png","https://www.facebook.com/share/1EirzYs49Z/?mibextid=wwXIfr"],["Contracting","5.png",""],["Wellth Hup","6.png",""],
+  ["Pharmacy Tantawy","7.png","https://www.facebook.com/share/1CdTKBN7Bm/?mibextid=wwXIfr"],["KM Store","8.png",""],["Zawea Work Space","9.png",""],
+  ["Nova Designs","10.png",""],["YN Group","11.png",""],["Salad With","12.png",""],
+  ["Morsy El-Garil","13.png","https://www.facebook.com/share/19zQksfDa4/?mibextid=wwXIfr"],
+  ["El-Zouq El-Aly UPVC","14.png","https://www.facebook.com/share/1DG4Y6UaHc/?mibextid=wwXIfr"],
+  ["Ismail Sobhy Taalab","15.jpeg","https://www.facebook.com/profile.php?id=61592695622609"],
+  ["Nibras Law Firm","16.jpeg","https://www.facebook.com/nibraslawfirmeg"]
+ ],
+ foot:{ar:"© 2026 Fox Tech. جميع الحقوق محفوظة.",en:"© 2026 Fox Tech. All rights reserved."}
 };
+const UI={ar:{lg:"English",cta:"تواصل معنا",hw:"ابدأ على واتساب 💬",he:"راسلنا 📧",soon:"قريباً ✨",ld:"جاري التحميل..."},en:{lg:"عربي",cta:"Contact Us",hw:"Start on WhatsApp 💬",he:"Send Email 📧",soon:"Coming soon ✨",ld:"Loading..."}};
 
-/* ========== الكود (متعدلهوش) ========== */
-const UI = {
-  ar: { services: "الخدمات", work: "الأعمال", contact: "تواصل", lang: "English", toLight: "☀️ فاتح", toDark: "🌙 داكن", cta: "تواصل معنا", heroBtn: "ابدأ على واتساب 💬", heroEmail: "راسلنا 📧", watch: "شوف الفيديو", labels: { legal: "قانوني", edu: "تعليمي" } },
-  en: { services: "Services", work: "Work", contact: "Contact", lang: "عربي", toLight: "☀️ Light", toDark: "🌙 Dark", cta: "Contact Us", heroBtn: "Start on WhatsApp 💬", heroEmail: "Send Email 📧", watch: "Watch", labels: { legal: "Legal", edu: "Educational" } }
-};
+/* ===== الكود: متعدلهوش ===== */
+const $=id=>document.getElementById(id);
+let L="ar",TH="dark",cur=0;
+const t=o=>typeof o==="string"?o:o[L];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target);setTimeout(()=>e.target.classList.remove("rv","show"),900)}}),{threshold:.1});
+const watch=()=>document.querySelectorAll(".rv:not(.w)").forEach(e=>{e.classList.add("w");io.observe(e)});
 
-let lang = "ar";
-let theme = "dark";
-const $ = id => document.getElementById(id);
-const wa = `https://wa.me/${SITE.whatsapp}`;
-
-function render() {
-  const L = lang, U = UI[L];
-  const t = v => (typeof v === "string" ? v : v[L]);
-
-  document.documentElement.lang = L;
-  document.documentElement.dir = L === "ar" ? "rtl" : "ltr";
-  document.body.classList.toggle("light", theme === "light");
-  document.title = `${SITE.brand} | ${L === "ar" ? "مونتاج وتصميم ومواقع تفاعلية" : "Montage, Design & Interactive Websites"}`;
-
-  $("brand").textContent = SITE.brand;
-  $("navServices").textContent = U.services;
-  $("navWork").textContent = U.work;
-  $("navContact").textContent = U.contact;
-  $("langBtn").textContent = U.lang;
-  $("themeBtn").textContent = theme === "dark" ? U.toLight : U.toDark;
-  $("headerCta").textContent = U.cta;
-  $("headerCta").href = wa;
-
-  $("heroTitle").textContent = t(SITE.hero.title);
-  $("heroText").textContent = t(SITE.hero.text);
-  $("heroWhatsapp").textContent = U.heroBtn;
-  $("heroWhatsapp").href = wa;
-  $("heroEmail").textContent = U.heroEmail;
-  $("heroEmail").href = `mailto:${SITE.email}`;
-
-  $("servicesTitle").textContent = t(SITE.services.title);
-  $("servicesSub").textContent = t(SITE.services.sub);
-  $("servicesGrid").innerHTML = SITE.services.items.map(s => `
-    <div class="card reveal">
-      <div class="ic">${s.icon}</div>
-      <h3>${t(s.name)}</h3>
-      <p>${t(s.desc)}</p>
-    </div>`).join("");
-
-  $("workTitle").textContent = t(SITE.work.title);
-  $("workSub").textContent = t(SITE.work.sub);
-  $("workContent").innerHTML = SITE.work.sections.map(sec => `
-    <div class="group reveal">
-      <h3>${t(sec.name)}</h3>
-      <p class="desc">${t(sec.desc)}</p>
-      <div class="vgrid">
-        ${sec.videos.map(v => `
-          <button type="button" class="vcard${SITE.cover ? "" : " fallback"}" data-url="${v.url}">
-            <span class="cover" ${SITE.cover ? `style="background-image:url('${SITE.cover}')"` : ""}></span>
-            <span class="tag">MONTAGE</span>
-            <span class="play">▶</span>
-            <span class="vtitle">${t(v.title)}</span>
-          </button>`).join("")}
-      </div>
-    </div>`).join("");
-
-  $("contactTitle").textContent = t(SITE.contact.title);
-  $("contactText").textContent = t(SITE.contact.text);
-  $("contactInfo").innerHTML = [
-    `📞 <strong>WhatsApp:</strong> ${SITE.contact.phones.join(" | ")}`,
-    `📧 <strong>Email:</strong> ${SITE.email}`,
-    `📍 <strong>${L === "ar" ? "الموقع" : "Location"}:</strong> ${t(SITE.contact.location)}`
-  ].map(h => `<div>${h}</div>`).join("");
-
-  $("footer").textContent = t(SITE.footer);
-
-  observeReveals();
+/* تحميل ذكي للصور: بيجرب كل الامتدادات الممكنة ويخفي الناقص */
+const EX=[".jpg.jpg",".jpg.PNG",".jpg.png",".jpg",".png",".PNG",".jpeg",".JPG",".jpg.JPG",".jpg.jpeg",".jpg.JPEG",".JPEG",".png.png",".webp"];
+const ld=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=s});
+async function pick(c,n){const b=`${c.d}/${c.p}-${n}`;for(const e of new Set([c.e,...EX])){if(!e)continue;const i=await ld(b+e);if(i){c.e=e;return i}}return null}
+async function loadCat(c){
+ if(c.on)return;c.on=1;c.g.innerHTML=`<p class="msg">${UI[L].ld}</p>`;let n=1,any=0;
+ while(n<=60){
+  const hit=(await Promise.all([0,1,2,3,4,5].map(k=>pick(c,n+k)))).filter(Boolean);
+  if(!hit.length)break;
+  if(!any){c.g.innerHTML="";any=1}
+  hit.forEach(i=>{const a=document.createElement("a");a.className="g tilt rv";a.href=i.src;i.alt="";a.appendChild(i);a.onclick=e=>{e.preventDefault();openLb(c.g,i.src)};c.g.appendChild(a)});
+  watch();n+=6;
+ }
+ if(!any)c.g.innerHTML=`<p class="msg">${UI[L].soon}</p>`;
 }
+function showCat(k){cur=k;SITE.cats.forEach((c,i)=>c.g.hidden=i!==k);document.querySelectorAll(".tab").forEach((b,i)=>b.classList.toggle("on",i===k));loadCat(SITE.cats[k])}
 
-function observeReveals() {
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add("show"); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+/* Lightbox */
+let LB=[],li=0;
+function openLb(g,s){LB=[...g.querySelectorAll("img")].map(i=>i.src);li=LB.indexOf(s);$("li").src=LB[li];$("lb").classList.add("on")}
+const mv=d=>{li=(li+d+LB.length)%LB.length;$("li").src=LB[li]};
+$("lx").onclick=()=>$("lb").classList.remove("on");
+$("lp").onclick=()=>mv(-1);$("ln").onclick=()=>mv(1);
+$("lb").onclick=e=>{if(e.target.id==="lb")$("lb").classList.remove("on")};
+document.addEventListener("keydown",e=>{if(!$("lb").classList.contains("on"))return;if(e.key==="Escape")$("lb").classList.remove("on");if(e.key==="ArrowLeft")mv(-1);if(e.key==="ArrowRight")mv(1)});
+
+/* 3D tilt + glare */
+document.addEventListener("pointermove",e=>{if(e.pointerType!=="mouse")return;const el=e.target.closest(".tilt");if(!el)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.style.transform=`perspective(800px) rotateY(${(x-.5)*12}deg) rotateX(${(.5-y)*12}deg) translateY(-4px)`;el.style.setProperty("--mx",x*100+"%");el.style.setProperty("--my",y*100+"%")});
+document.addEventListener("pointerout",e=>{const el=e.target.closest&&e.target.closest(".tilt");if(el&&!el.contains(e.relatedTarget))el.style.transform=""});
+
+function render(){
+ const U=UI[L],S=SITE,wa=`https://wa.me/${S.wa}`;
+ document.documentElement.lang=L;document.documentElement.dir=L==="ar"?"rtl":"ltr";
+ document.body.classList.toggle("light",TH==="light");
+ $("lg").textContent=U.lg;$("tb").textContent=TH==="dark"?"☀️":"🌙";
+ $("hc").textContent=U.cta;$("hc").href=wa;
+ $("nv").innerHTML=Object.keys(S.sec).map(k=>`<a href="#${k}">${t(S.sec[k].n)}</a>`).join("");
+ $("h1").textContent=t(S.hero.t);$("hp").textContent=t(S.hero.p);
+ $("hw").textContent=U.hw;$("hw").href=wa;$("he").textContent=U.he;$("he").href=`mailto:${S.email}`;
+ for(const k in S.sec){$(k).querySelector("h2").textContent=t(S.sec[k].t);$(k).querySelector(".sub").textContent=t(S.sec[k].s)}
+ $("sv").innerHTML=S.services.map(s=>`<div class="glass tilt rv"><div class="ic">${s[0]}</div><h3>${t(s[1])}</h3><p>${t(s[2])}</p></div>`).join("");
+ $("vd").innerHTML=S.videos.map(g=>`<div class="grp"><h3>${t(g.n)}</h3><div class="vg">${g.u.map((u,i)=>`<a class="v tilt rv" href="${u}" target="_blank" rel="noopener" style="background-image:url('${g.c}'),var(--fb)"><span class="pl">▶</span><b>${t(g.p)} ${String(i+1).padStart(2,"0")}</b></a>`).join("")}</div></div>`).join("");
+ $("tabs").innerHTML=S.cats.map((c,i)=>`<button class="tab${i===cur?" on":""}" data-i="${i}">${t(c.n)}</button>`).join("");
+ document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>showCat(+b.dataset.i));
+ $("tm").innerHTML=S.team.map(m=>`<article class="glass tilt tc rv"><div class="av"><span>${t(m.i)}</span><img src="${m.ph}" alt="" onerror="this.remove()"></div><h3 class="gt">${t(m.n)}</h3><div class="rl">${t(m.r)}</div><p>${t(m.b)}</p></article>`).join("");
+ const pl=S.partners.map(p=>{const im=`<img src="partners/${p[1]}" alt="${p[0]}" loading="lazy">`;return p[2]?`<a class="pt" href="${p[2]}" target="_blank" rel="noopener" title="${p[0]}">${im}</a>`:`<span class="pt" title="${p[0]}">${im}</span>`}).join("");
+ $("pm").innerHTML=pl+pl;
+ $("ci").innerHTML=`<div>📞 ${S.phones.map(p=>`<a href="tel:${p.replace(/\s/g,"")}">${p}</a>`).join(" | ")}</div><div>📧 <a href="mailto:${S.email}">${S.email}</a></div><div>📍 ${L==="ar"?"القاهرة، مصر":"Cairo, Egypt"}</div>`;
+ $("so").innerHTML=Object.entries(S.social).filter(e=>e[1]).map(e=>`<a class="ghost" href="${e[1]}" target="_blank" rel="noopener">${e[0]}</a>`).join("");
+ $("ft").textContent=t(S.foot);
+ watch();
 }
+$("lg").onclick=()=>{L=L==="ar"?"en":"ar";render()};
+$("tb").onclick=()=>{TH=TH==="dark"?"light":"dark";render()};
 
-// فتح الفيديو بالضغط على أي كارت
-$("workContent").addEventListener("click", e => {
-  const card = e.target.closest(".vcard");
-  if (card) window.open(card.dataset.url, "_blank", "noopener");
-});
+/* أقسام الجرافيك: كل قسم له حاوية ثابتة بتتحمل أول ما تدوس عليه */
+SITE.cats.forEach(c=>{c.g=document.createElement("div");c.g.className="gg";c.g.hidden=true;$("gl").appendChild(c.g)});
+render();showCat(0);
 
-$("langBtn").addEventListener("click", () => {
-  lang = lang === "ar" ? "en" : "ar";
-  render();
-});
-
-$("themeBtn").addEventListener("click", () => {
-  theme = theme === "dark" ? "light" : "dark";
-  render();
-});
-
-render();
+/* Gold dust */
+(()=>{if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;const c=$("dust"),x=c.getContext("2d");let w,h;const P=[],N=innerWidth<700?26:55;
+const rs=()=>{w=c.width=innerWidth;h=c.height=innerHeight};rs();addEventListener("resize",rs);
+for(let i=0;i<N;i++)P.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.4,s:Math.random()*.25+.05,a:Math.random()*.5+.15,d:Math.random()*2-1});
+(function f(){x.clearRect(0,0,w,h);for(const p of P){p.y-=p.s;p.x+=p.d*.15;if(p.y<-5){p.y=h+5;p.x=Math.random()*w}x.beginPath();x.arc(p.x,p.y,p.r,0,6.28);x.fillStyle=`rgba(212,175,55,${p.a})`;x.fill()}requestAnimationFrame(f)})()})();
 </script>
 </body>
 </html>
